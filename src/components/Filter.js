@@ -17,19 +17,19 @@ const Filter=()=>{
                         <p className="font-bold">Price range</p>
                         <p>The average nightly price is $ 253 euro</p>
                         <div className="flex justify-center items-center gap-3">
-                            <div className="flex flex-col border border-1 w-[40%] border border-2 border-black rounded-md py-1 px-2">
+                            <div className="flex flex-col border border-1 dark:bg-white dark:text-black w-[40%] border border-2 border-black rounded-md py-1 px-2">
                                 <p>min price</p>
                                 <div className="flex gap-1">
                                     <p>$</p>
-                                    <input type='number' className="w-full outline-none" placeholder="9"/>
+                                    <input type='number' className="w-full outline-none dark:text-white dark:bg-black" placeholder="9"/>
                                 </div>
                             </div>
                             <p>-</p>
-                            <div className="flex flex-col border border-1  w-[40%] border border-2 border-black rounded-md py-1 px-2">
+                            <div className="flex flex-col border border-1 dark:bg-white dark:text-black w-[40%] border border-2 border-black rounded-md py-1 px-2">
                                 <p>max price</p>
                                 <div className="flex gap-1">
                                     <p>$</p>
-                                    <input type='number' className="w-full outline-none" placeholder="9"/>
+                                    <input type='number' className="w-full outline-none dark:text-white dark:bg-black" placeholder="9"/>
                                 </div>
                             </div>
                         </div>
