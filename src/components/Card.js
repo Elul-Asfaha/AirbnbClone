@@ -1,29 +1,33 @@
 import StarIcon from '@mui/icons-material/Star';
-const Card=()=>{
+import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
+const Card=(props)=>{
     return(
-        <div className="flex flex-col w-[80%] md:max-w-[300px] mx-auto">
-            <img src='logo192.png' className='container' alt=''/>
+        <div className="flex flex-col w-[90%] md:max-w-[300px] my-5 mx-auto relative">
+            <img src={props.data.Image} className='container rounded-lg mb-1' alt=''/>
             <div className='flex justify-between'>
                 <p className=" font-bold">
-                    Addis Ababa,
+                    {props.data.City},
                     <span>
-                        Ethiopia
+                        {props.data.Country}
                     </span>
                 </p>
                 <p className='flex gap-2'>
                     <StarIcon/>
                     <span>
-                        4.8
+                        {props.data.Rating}
                     </span>
                 </p>
             </div>
             <p>
-                Hosted by Antonello
+                Hosted by {props.data.Name}
             </p>
             <p>
-                Apr 12-18
+                {props.data.Date}
             </p>
-            <p><span>$</span> Night</p>
+            <p className='font-semibold'><span>${props.data.Price}</span> Night</p>
+            <div className='absolute inset-0 flex justify-end px-3 py-2'>
+                <FavoriteBorderIcon className='text-white' style={{fill:''}}/>
+            </div>
         </div>
     )
 }

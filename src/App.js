@@ -1,10 +1,26 @@
+import { createContext, useState } from "react";
 import Main from "./Pages/Main";
+import Filter from "./components/Filter";
+import Footer from "./components/Footer"
+import Nav from "./components/Nav"
+import data from './'
+export const  provideData=createContext()
 
 function App() {
+  const [toggleFilter,setToggleFilter]=useState(true)
+
+  const handleToggleFilter=()=>{
+    setToggleFilter(!toggleFilter)
+}
   return (
-    <div className="">
-      <Main/>
-    </div>
+    <provideData.Provider value={{handleToggleFilter}}>
+      <div className="relative dark:text-white dark:bg-black">
+        <Nav/>
+        {!toggleFilter && <Main/>}
+        <Footer/>
+        {toggleFilter&&<Filter/>}
+      </div>
+    </provideData.Provider>
   );
 }
 

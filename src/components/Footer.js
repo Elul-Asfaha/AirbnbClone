@@ -3,42 +3,42 @@ import LanguageIcon from '@mui/icons-material/Language';
 
 const Footer=()=>{
     return(
-        <div className="md:absolute bottom-0 px-[5%] bg-gray-100 w-full border border-1">
+        <div className="md:absolute bottom-0 px-[5%] dark:bg-black dark:text-white bg-gray-100 w-full border-t border-1">
             <div className='hidden md:flex justify-between py-5'>
                 <div className='basis-7/12 '>
-                    <ul className=' flex flex-wrap gap-2'>
+                    <ul className=' flex flex-wrap gap-x-2'>
                         <li>
                         @ 2023 Airbnb,Inc.
                         </li>
-                        <li className='cursor-pointer'>
+                        <li className='cursor-pointer hover:underline'>
                             Terms
                         </li>
-                        <li className='cursor-pointer'>
+                        <li className='cursor-pointer hover:underline'>
                             Sitemap
                         </li>
-                        <li className='cursor-pointer'> 
+                        <li className='cursor-pointer hover:underline'> 
                             privacy
                         </li>
-                        <li className='cursor-pointer'>
+                        <li className='cursor-pointer hover:underline'>
                             Your Privacy Choices
                         </li>
-                        <li className='cursor-pointer'>
+                        <li className='cursor-pointer hover:underline'>
                             Destinations
                         </li>
                     </ul>
                 </div>
-                <div className='basis-5/12'>
-                    <ul className='flex'>
-                        <li className='flex items-center'>
+                <div className='basis-5/12 flex items-center justify-end'>
+                    <ul className='flex gap-2'>
+                        <li className='flex items-center hover:underline cursor-pointer'>
                             <LanguageIcon/>
                             <p>
                                 English (US)
                             </p>
                         </li>
-                        <li>
+                        <li className='hover:underline cursor-pointer'>
                             Eur
                         </li>
-                        <li className='flex items-center justify-center lg:justify-end'>
+                        <li className='flex items-center justify-center lg:justify-end cursor-pointer'>
                             <p className='underline'>
                                 Support & resources
                             </p>
