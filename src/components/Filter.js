@@ -5,14 +5,14 @@ import { provideData } from "../App"
 const Filter=()=>{
     const data=useContext(provideData)
     return(
-        <div className="absolute w-full top-0 bg-black/[30%]">
+        <div className="absolute w-full top-0 dark:bg-white/[30%] bg-black/[30%]">
             <div className='mt-[20px] dark:text-white dark:bg-black bg-white rounded-md'>
                 <div className="flex justify-center relative px-5 py-3 border-b border-1">
                     <div className="absolute left-[5%]"><CloseIcon onClick={data.handleToggleFilter}/></div>
                     <p className="font-bold">Filters</p>
                 </div>
 
-                <div className="px-[5%] flex flex-col gap-5 border border-1 py-2">
+                <div className="px-[5%] flex flex-col gap-5 py-2">
                     <div className="flex flex-col gap-2">
                         <p className="font-bold">Price range</p>
                         <p>The average nightly price is $ 253 euro</p>
