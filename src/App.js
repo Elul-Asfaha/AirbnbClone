@@ -3,11 +3,10 @@ import Main from "./Pages/Main";
 import Filter from "./components/Filter";
 import Footer from "./components/Footer"
 import Nav from "./components/Nav"
-import data from './'
 export const  provideData=createContext()
 
 function App() {
-  const [toggleFilter,setToggleFilter]=useState(true)
+  const [toggleFilter,setToggleFilter]=useState(false)
 
   const handleToggleFilter=()=>{
     setToggleFilter(!toggleFilter)

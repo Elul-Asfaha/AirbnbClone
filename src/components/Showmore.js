@@ -5,7 +5,7 @@ const Showmore=(props)=>{
             <div>
 
             </div>
-            <p className="text-2xl outline outline-1 outline-black px-3 py-2 rounded-lg" onClick={props.AmountDisplayed}>
+            <p className="text-2xl outline outline-1 outline-black px-3 py-2 rounded-lg  cursor-pointer " onClick={props.AmountDisplayed}>
                 Show More
             </p>
         </div>
