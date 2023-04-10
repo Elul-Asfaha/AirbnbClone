@@ -6,7 +6,7 @@ const Filter=()=>{
     const data=useContext(provideData)
     return(
         <div className="absolute w-full top-0 bg-black/[30%]">
-            <div className='mt-[20px] bg-white rounded-md'>
+            <div className='mt-[20px] dark:text-white dark:bg-black bg-white rounded-md'>
                 <div className="flex justify-center relative px-5 py-3 border-b border-1">
                     <div className="absolute left-[5%]"><CloseIcon onClick={data.handleToggleFilter}/></div>
                     <p className="font-bold">Filters</p>
