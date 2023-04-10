@@ -63,7 +63,7 @@ const Filter=()=>{
                             <p className="font-bold">Bedrooms</p>
                             <div className="overflow-x-auto scrollbar-hide">
                                 <ul className="flex gap-5">
-                                    <li className="py-3 px-5 bg-black text-white rounded-full">Any</li>
+                                    <li className="py-3 px-5 dark:bg-white dark:text-black bg-black text-white rounded-full">Any</li>
                                     <li className="py-3 px-5 border border-1 rounded-full">1</li>
                                     <li className="py-3 px-5 border border-1 rounded-full">2</li>
                                     <li className="py-3 px-5 border border-1 rounded-full">3</li>
@@ -79,7 +79,7 @@ const Filter=()=>{
                             <p className="font-bold">Beds</p>
                             <div className="overflow-x-auto scrollbar-hide">
                                 <ul className="flex gap-5">
-                                    <li className="py-3 px-5 bg-black text-white rounded-full">Any</li>
+                                    <li className="py-3 px-5 dark:bg-white dark:text-black bg-black text-white rounded-full">Any</li>
                                     <li className="py-3 px-5 border border-1 rounded-full">1</li>
                                     <li className="py-3 px-5 border border-1 rounded-full">2</li>
                                     <li className="py-3 px-5 border border-1 rounded-full">3</li>
@@ -95,7 +95,7 @@ const Filter=()=>{
                             <p className="font-bold">Bathrooms</p>
                             <div className="overflow-x-auto scrollbar-hide">
                                 <ul className="flex gap-5">
-                                    <li className="py-3 px-5 bg-black text-white rounded-full">Any</li>
+                                    <li className="py-3 px-5 dark:bg-white dark:text-black bg-black text-white rounded-full">Any</li>
                                     <li className="py-3 px-5 border border-1 rounded-full">1</li>
                                     <li className="py-3 px-5 border border-1 rounded-full">2</li>
                                     <li className="py-3 px-5 border border-1 rounded-full">3</li>
