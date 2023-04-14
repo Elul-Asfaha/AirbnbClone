@@ -3,19 +3,33 @@ import Main from "./Pages/Main";
 import Filter from "./components/Filter";
 import Footer from "./components/Footer"
 import Nav from "./components/Nav"
+import Property from "./Pages/Property";
+import { Route, Routes } from "react-router-dom";
+
 export const  provideData=createContext()
 
 function App() {
-  const [toggleFilter,setToggleFilter]=useState(false)
+  const [toggleFilter,setToggleFilter]=useState(false) // used to toggle the filters
+
+  const [showProperty,setShowProperty]=useState() // used to set the items that show the property details
+
 
   const handleToggleFilter=()=>{
     setToggleFilter(!toggleFilter)
 }
+
+
   return (
-    <provideData.Provider value={{handleToggleFilter}}>
-      <div className="relative dark:text-white dark:bg-black">
+    <provideData.Provider value={{handleToggleFilter,setShowProperty,showProperty}}>
+      <div className="relative dark:text-white dark:bg-black min-h-screen">
         <Nav/>
-        {!toggleFilter && <Main/>}
+        {!toggleFilter && 
+        <Routes>
+          <Route path="/" element={<Main/>}/>
+          <Route path="/Details" element={<Property/>}/>
+        </Routes>  
+        }
+
         <Footer/>
         {toggleFilter&&<Filter/>}
       </div>

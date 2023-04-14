@@ -21,7 +21,7 @@ const Filter=()=>{
                                 <p>min price</p>
                                 <div className="flex gap-1">
                                     <p>$</p>
-                                    <input type='number' className="w-full outline-none dark:text-white dark:bg-black" placeholder="9"/>
+                                    <input type='number' className="w-full outline-none dark:text-black dark:bg-white" placeholder="9"/>
                                 </div>
                             </div>
                             <p>-</p>
@@ -29,7 +29,7 @@ const Filter=()=>{
                                 <p>max price</p>
                                 <div className="flex gap-1">
                                     <p>$</p>
-                                    <input type='number' className="w-full outline-none dark:text-white dark:bg-black" placeholder="9"/>
+                                    <input type='number' className="w-full outline-none dark:text-black dark:bg-white" placeholder="9"/>
                                 </div>
                             </div>
                         </div>
