@@ -26,7 +26,7 @@ const Property=()=>{
                     <div className="flex flex-wrap justify-between">
                         <div className="flex flex-wrap gap-3">
                             <p>
-                                    star 5.0
+                                    star {providedData.showProperty.Rating?providedData.showProperty.Rating:''}
                             </p>
                             <div className="flex font-bold underline">3 reviews</div>
                             <div>
@@ -166,7 +166,7 @@ const Property=()=>{
                         <div className="sticky top-10 ">
                             <div className='rounded-lg shadow shadow-xl border border-1 min-h-[300px] flex flex-col gap-5 px-3 py-5'>
                                 <div className='flex flex-wrap justify-between'>
-                                    <p><span className='font-bold'>$250</span> night</p>
+                                    <p><span className='font-bold'>$ {providedData.showProperty.Price?providedData.showProperty.Price:''}</span> night</p>
                                     <div className='flex gap-2 items-center'>
                                         <div className='flex'>
                                             <StarIcon/>
@@ -184,11 +184,10 @@ const Property=()=>{
                                     </div>
                                     <div className='border border-1 rounded-md'>Guests</div>
                                 </div>
-                                <button className='bg-purple-700 text-white py-2 px-5 rounded-lg'>Check availablity</button>
+                                <button className='bg-purple-700 text-white py-2 px-5 rounded-lg'>Reserve</button>
                                 <div>
-                                    <button className='bg-purple-700 text-white py-2 px-5 rounded-lg'>Reserve</button>
                                     <div className='flex justify-between'>
-                                        <p>$150 X 3 nights</p>
+                                        <p>$ {providedData.showProperty.Price?providedData.showProperty.Price:''} X 3 nights</p>
                                         <p>$50</p>
                                     </div>
                                     <div className='flex justify-between'>
@@ -200,9 +199,9 @@ const Property=()=>{
                                         <p>$90</p>
                                     </div>
                                 </div>
-                                <div className='font-bold flex justify-between py-5 border-t border-1'>
+                                <div className='font-bold flex justify-between pt-5 border-t border-1'>
                                     <p>Total</p>
-                                    <p>$615</p>
+                                    <p>$ {providedData.showProperty.Price?providedData.showProperty.Price*3+(90+50+75):''}</p>
                                 </div>
                             </div>
                             <div className='flex sticky top-0 mt-5 justify-center items-center gap-2'>
