@@ -1,6 +1,6 @@
 const Showmore=(props)=>{
     return(
-        <div className="flex flex-col justify-center items-center w-full gap-[40px]">
+        <div className="flex flex-col justify-center items-center w-full gap-[20px] py-[20px]">
             <div className="border-1 border-b w-80"></div>
             <div>
 

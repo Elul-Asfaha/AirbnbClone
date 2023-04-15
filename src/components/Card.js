@@ -12,14 +12,14 @@ const Card=(props)=>{
         <Link to="/Details"  onClick={handleShowDetails}>
             <div className="flex flex-col w-[90%] md:max-w-[300px] my-5 mx-auto relative">
                 <img src={props.data.Image} loading="lazy" className='container rounded-lg mb-1' alt=''/>
-                <div className='flex justify-between'>
-                    <p className=" font-bold">
+                <div className='flex justify-between flex-wrap'>
+                    <p className="font-bold">
                         {props.data.City},
                         <span>
                             {props.data.Country}
                         </span>
                     </p>
-                    <p className='flex gap-2'>
+                    <p className='flex gap-1'>
                         <StarIcon/>
                         <span>
                             {props.data.Rating}

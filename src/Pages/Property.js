@@ -17,7 +17,6 @@ import { provideData } from '../App';
 
 const Property=()=>{
     const providedData=useContext(provideData)
-    console.log(providedData.showProperty)
     return(
             <div id={providedData.id} className="min-h-screen flex flex-col gap-5 py-5 md:px-[5%] lg:px-[10%] xl:px-[15%] md:pb-[13%] lg:pb-[5%] relative">
 
