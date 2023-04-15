@@ -12,11 +12,14 @@ import AcUnitIcon from '@mui/icons-material/AcUnit';
 import LocalParkingIcon from '@mui/icons-material/LocalParking';
 import StarIcon from '@mui/icons-material/Star';
 import FlagIcon from '@mui/icons-material/Flag';
-import { useContext } from 'react';
+import { useContext,useEffect } from 'react';
 import { provideData } from '../App';
 
 const Property=()=>{
     const providedData=useContext(provideData)
+      useEffect(()=>{
+        window.scrollTo(0,0)
+    },[])
     return(
             <div id={providedData.id} className="min-h-screen flex flex-col gap-5 py-5 md:px-[5%] lg:px-[10%] xl:px-[15%] md:pb-[13%] lg:pb-[5%] relative">
 
