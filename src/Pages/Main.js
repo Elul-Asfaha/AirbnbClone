@@ -13,7 +13,7 @@ const Main=()=>{
             <div className="md:grid md:grid-cols-3 lg:grid-cols-6">
                 {dispData}
             </div>
-            <Showmore AmountDisplayed={()=>handleAmountDisplayed}/> 
+            <Showmore AmountDisplayed={()=>handleAmountDisplayed()}/> 
         </div>
     )
 }
