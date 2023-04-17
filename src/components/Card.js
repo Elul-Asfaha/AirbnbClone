@@ -9,13 +9,14 @@ const Card=(props)=>{
         providedData.setShowProperty(props.data)
     }
     return(
-        <Link to="/Details"  onClick={handleShowDetails}>
-            <div className="flex flex-col w-[90%] md:max-w-[300px] my-5 mx-auto relative">
-                <img src={props.data.Image} loading="lazy" className='container rounded-lg mb-1' alt=''/>
+        <div className='relative flex flex-col'>
+            <Link to="/Details" onClick={handleShowDetails} className="flex flex-col w-[90%] md:max-w-[300px] justify-between h-[350px]">
+                <img src={props.data.Image} loading="lazy"  className='container rounded-lg mb-1 min-h-[65%]' alt=''/>
                 <div className='flex justify-between flex-wrap'>
                     <p className="font-bold">
                         {props.data.City},
                         <span>
+                             {' '}
                             {props.data.Country}
                         </span>
                     </p>
@@ -33,11 +34,12 @@ const Card=(props)=>{
                     {props.data.Date}
                 </p>
                 <p className='font-semibold'><span>${props.data.Price}</span> Night</p>
-                <div className='absolute inset-0 flex justify-end px-3 py-2'>
-                    <FavoriteBorderIcon className='text-white' style={{fill:''}}/>
-                </div>
+                
+            </Link>
+            <div className='absolute right-10 top-2 max-h-[30px] max-w-[30px] cursor-pointer'>
+                    <FavoriteBorderIcon className='text-white hover:text-gray-300' style={{fill:''}}/>
             </div>
-        </Link>
+        </div>
     )
 }
 export default Card

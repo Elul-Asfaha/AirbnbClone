@@ -2,7 +2,12 @@
 module.exports = {
   content: ["./src/**/*.{html,js}"],
   theme: {
-    extend: {},
+    fontFamily:{
+      'Niramit': ['Niramit','sans-serif']
+    },
+    extend: {
+      
+    },
   },
   plugins: [
     require('tailwind-scrollbar-hide')

@@ -12,12 +12,12 @@ import AcUnitIcon from '@mui/icons-material/AcUnit';
 import LocalParkingIcon from '@mui/icons-material/LocalParking';
 import StarIcon from '@mui/icons-material/Star';
 import FlagIcon from '@mui/icons-material/Flag';
-import { useContext,useEffect } from 'react';
+import { useContext, useEffect } from 'react';
 import { provideData } from '../App';
 
 const Property=()=>{
     const providedData=useContext(provideData)
-      useEffect(()=>{
+    useEffect(()=>{
         window.scrollTo(0,0)
     },[])
     return(

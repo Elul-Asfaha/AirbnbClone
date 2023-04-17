@@ -9,13 +9,14 @@ import SingleBedIcon from '@mui/icons-material/SingleBed';
 import FilterAltIcon from '@mui/icons-material/FilterAlt';
 import { provideData } from "../App"
 import { useContext } from 'react';
+import { Link } from 'react-router-dom';
 const Nav=()=>{
     const data=useContext(provideData)
     return(
-        <div className="flex items-center lg:justify-between md:py-4 px-[5%] border-b border-1 overflow-hidden">
-            <div className="basis-3/12 hidden md:block"> 
+        <div className="sticky top-0 flex items-center lg:justify-between md:py-4 px-[5%] border-b border-1 overflow-hidden z-50 bg-white dark:bg-black bg:text-white">
+            <Link to='/' className="basis-3/12 hidden md:block"> 
                 logo
-            </div>
+            </Link>
             
             <div className="hidden md:basis-5/12 lg:basis-3/12 md:flex justify-between items-center gap-5 border border-1 rouneded hover:shadow rounded-full py-1 pl-5 px-1 font-semibold cursor-pointer">
                 <div>

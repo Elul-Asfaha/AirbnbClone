@@ -21,7 +21,7 @@ function App() {
 
   return (
     <provideData.Provider value={{handleToggleFilter,setShowProperty,showProperty}}>
-      <div className="relative dark:text-white dark:bg-black min-h-screen">
+      <div className="relative dark:text-white dark:bg-black min-h-screen font-Niramit">
         <Nav/>
         {!toggleFilter && 
         <Routes>
