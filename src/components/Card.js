@@ -11,9 +11,7 @@ const Card=(props)=>{
     return(
         <div className='relative flex flex-col w-[100%]'>
             <Link to="/Details" onClick={handleShowDetails} className="flex flex-col md:max-w-[300px] justify-between h-[350px]">
-                <div className='rounded-lg mb-1 min-h-[65%] skeleton'>
-                    <img src={props.data.Image} loading="lazy"  className='container' alt=''/>
-                </div>
+                <img src={props.data.Image} loading="lazy"  className='container rounded-lg mb-1 min-h-[65%] skeleton' alt=''/>
                 <div className='flex justify-between flex-wrap'>
                     <p className="font-bold skeleton">
                         {props.data.City},

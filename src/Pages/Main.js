@@ -6,7 +6,7 @@ import Card from '../components/Card'
 
 
 
-
+        
 const Main=()=>{
     // const [amount,setAmount]=useState(18)
     // const handleAmountDisplayed=()=>{
@@ -14,6 +14,7 @@ const Main=()=>{
     // } 
     // this function is used to determine how many properties need to be displayed.
     // the above funtion is currently disabled
+    
     const dispData=data.map(items=><Card key={items.id} data={items} />)
     return(
             <div className="min-h-screen py-5 md:px-[5%]  md:pb-[13%] lg:pb-[5%] relative">
