@@ -3,7 +3,7 @@ import LanguageIcon from '@mui/icons-material/Language';
 
 const Footer=()=>{
     return(
-        <div className="absolute md:sticky bottom-0 px-[5%] dark:bg-black dark:text-white bg-gray-100 w-full border-t border-1 absolute offset-0">
+        <div className="sticky bottom-0 px-[5%] dark:bg-black dark:text-white bg-gray-100 w-full border-t border-1 absolute offset-0">
             <div className='hidden md:flex justify-between py-5'>
                 <div className='basis-7/12 '>
                     <ul className=' flex flex-wrap gap-x-2'>
