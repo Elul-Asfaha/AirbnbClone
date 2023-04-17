@@ -9,9 +9,9 @@ const Card=(props)=>{
         providedData.setShowProperty(props.data)
     }
     return(
-        <div className='relative flex flex-col'>
-            <Link to="/Details" onClick={handleShowDetails} className="flex flex-col w-[90%] md:max-w-[300px] justify-between h-[350px]">
-                <img src={props.data.Image} loading="lazy"  className='container rounded-lg mb-1 min-h-[65%]' alt=''/>
+        <div className='relative flex flex-col w-[100%]'>
+            <Link to="/Details" onClick={handleShowDetails} className="flex flex-col md:max-w-[300px] justify-between h-[350px]">
+                <img src={props.data.Image} loading="lazy"  className='container rounded-lg mb-1 min-h-[65%] skeleton' alt=''/>
                 <div className='flex justify-between flex-wrap'>
                     <p className="font-bold">
                         {props.data.City},
@@ -27,7 +27,7 @@ const Card=(props)=>{
                         </span>
                     </p>
                 </div>
-                <p>
+                <p className='skeleton'>
                     Hosted by {props.data.Name}
                 </p>
                 <p>
@@ -36,7 +36,7 @@ const Card=(props)=>{
                 <p className='font-semibold'><span>${props.data.Price}</span> Night</p>
                 
             </Link>
-            <div className='absolute right-10 top-2 max-h-[30px] max-w-[30px] cursor-pointer'>
+            <div className='absolute right-3 top-3 max-h-[30px] max-w-[30px] cursor-pointer'>
                     <FavoriteBorderIcon className='text-white hover:text-gray-300' style={{fill:''}}/>
             </div>
         </div>
