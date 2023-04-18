@@ -20,22 +20,24 @@ const Property=()=>{
     useEffect(()=>{
         window.scrollTo(0,0)
     },[])
+    
+    
     return(
-            <div id={providedData.id} className="min-h-screen flex flex-col gap-5 py-5 md:px-[5%] lg:px-[10%] xl:px-[15%] md:pb-[13%] lg:pb-[5%] relative">
+            <div id={providedData.id && providedData.id} className="min-h-screen flex flex-col gap-5 py-5 md:px-[5%] lg:px-[10%] xl:px-[15%] md:pb-[13%] lg:pb-[5%] relative">
 
                 <div className="flex flex-col justify-evenly gap-5 px-2">
                     <h2 className="flex text-3xl">Blue Horizon Villa Anatoli, 1BD, private pool</h2>
                     <div className="flex flex-wrap justify-between">
                         <div className="flex flex-wrap gap-3">
                             <p>
-                                    star {providedData.showProperty.Rating?providedData.showProperty.Rating:''}
+                                    star {providedData.showProperty.Rating && providedData.showProperty.Rating}
                             </p>
                             <div className="flex font-bold underline">3 reviews</div>
                             <div>
                                 !Superhost
                             </div>
                             <div className="flex font-bold underline">
-                                <p>{providedData.showProperty.City?providedData.showProperty.City:''},<span> {providedData.showProperty.Country?providedData.showProperty.Country:''}</span></p>
+                                <p>{providedData.showProperty.City && providedData.showProperty.City},<span> {providedData.showProperty.Country && providedData.showProperty.Country}</span></p>
                             </div>
                         </div>
                         <div className="gap-3 hidden md:flex">
@@ -46,20 +48,20 @@ const Property=()=>{
                 </div>
 
                 <div className="flex md:grid md:grid-cols-2 md:gap-x-4 justify-center md:rounded-xl max-h-[500px] overflow-hidden">
-                    <div className="flex"><img src={providedData.showProperty.Image?providedData.showProperty.Image:''} alt="" className="cover"/>
+                    <div className="flex"><img src={providedData.showProperty.Image && providedData.showProperty.Image} alt="" className="cover"/>
                     </div>
                     <div className="hidden md:grid md:grid-cols-2 gap-2 max-h-[500px]">
                         <div className="flex">
-                            <img src={providedData.showProperty.Image?providedData.showProperty.Image:''}  alt="" className="cover"/>
+                            <img src={providedData.showProperty.Image && providedData.showProperty.Image}  alt="" className="cover"/>
                         </div>
                         <div className="flex">
-                            <img src={providedData.showProperty.Image?providedData.showProperty.Image:''}  alt="" className="cover"/>
+                            <img src={providedData.showProperty.Image && providedData.showProperty.Image}  alt="" className="cover"/>
                         </div>
                         <div className="flex">
-                            <img src={providedData.showProperty.Image?providedData.showProperty.Image:''}  alt="" className="cover"/>
+                            <img src={providedData.showProperty.Image && providedData.showProperty.Image}  alt="" className="cover"/>
                         </div>
                         <div className="flex">
-                            <img src={providedData.showProperty.Image?providedData.showProperty.Image:''}  alt="" className="cover"/>
+                            <img src={providedData.showProperty.Image && providedData.showProperty.Image}  alt="" className="cover"/>
                         </div>
                     </div>
                 </div>
@@ -69,7 +71,7 @@ const Property=()=>{
                        
                         <div className="border-b border-1 pb-4">
                             <div  className="flex justify-between">
-                                <p className="font-bold max-w-[300px]">Earthen home hosted by {providedData.showProperty.Name?providedData.showProperty.Name:''}</p><div><AccountCircleIcon style={{fontSize:'50px'}}/></div>
+                                <p className="font-bold max-w-[300px]">Earthen home hosted by {providedData.showProperty.Name && providedData.showProperty.Name}</p><div><AccountCircleIcon style={{fontSize:'50px'}}/></div>
                             </div>
                             <div className="flex gap-1">
                                 <p>2 guests.</p>
@@ -168,7 +170,7 @@ const Property=()=>{
                         <div className="sticky top-10 ">
                             <div className='rounded-lg shadow shadow-xl border border-1 min-h-[300px] flex flex-col gap-5 px-3 py-5'>
                                 <div className='flex flex-wrap justify-between'>
-                                    <p><span className='font-bold'>$ {providedData.showProperty.Price?providedData.showProperty.Price:''}</span> night</p>
+                                    <p><span className='font-bold'>$ {providedData.showProperty.Price && providedData.showProperty.Price}</span> night</p>
                                     <div className='flex gap-2 items-center'>
                                         <div className='flex'>
                                             <StarIcon/>
@@ -189,7 +191,7 @@ const Property=()=>{
                                 <button className='bg-purple-700 text-white py-2 px-5 rounded-lg'>Reserve</button>
                                 <div>
                                     <div className='flex justify-between'>
-                                        <p>$ {providedData.showProperty.Price?providedData.showProperty.Price:''} X 3 nights</p>
+                                        <p>$ {providedData.showProperty.Price && providedData.showProperty.Price} X 3 nights</p>
                                         <p>$50</p>
                                     </div>
                                     <div className='flex justify-between'>
@@ -203,7 +205,7 @@ const Property=()=>{
                                 </div>
                                 <div className='font-bold flex justify-between pt-5 border-t border-1'>
                                     <p>Total</p>
-                                    <p>$ {providedData.showProperty.Price?providedData.showProperty.Price*3+(90+50+75):''}</p>
+                                    <p>$ {providedData.showProperty.Price && providedData.showProperty.Price*3+(90+50+75)}</p>
                                 </div>
                             </div>
                             <div className='flex sticky top-0 mt-5 justify-center items-center gap-2'>

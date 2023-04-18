@@ -66,11 +66,10 @@ const Filter=()=>{
                 plus: false
             }
         )
-        console.log(currentFilter)
     }
 
     return(
-        <div className="absolute w-full top-0 dark:bg-white/[30%] bg-black/[30%]">
+        <div className="absolute w-full top-0 dark:bg-white/[30%] bg-black/[30%] z-50">
             <div className='mt-[20px] dark:text-white dark:bg-black bg-white rounded-md'>
                 <div className="flex justify-center relative px-5 py-3 border-b border-1">
                     <div className="absolute left-[5%]"><CloseIcon className='cursor-pointer' onClick={data.handleToggleFilter}/></div>

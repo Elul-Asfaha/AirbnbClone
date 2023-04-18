@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import { provideData } from '../App';
 const Card=(props)=>{
     const providedData=useContext(provideData)
+
     const handleShowDetails=(e)=>{
         providedData.setShowProperty(props.data)
     }

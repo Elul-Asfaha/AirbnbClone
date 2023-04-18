@@ -13,7 +13,7 @@ import { Link } from 'react-router-dom';
 const Nav=()=>{
     const data=useContext(provideData)
     return(
-        <div className="sticky top-0 flex items-center lg:justify-between md:py-4 px-[5%] border-b border-1 overflow-hidden z-50 bg-white dark:bg-black bg:text-white">
+        <div className="sticky top-0 flex items-center lg:justify-between md:py-4 px-[5%] border-b border-1 overflow-hidden z-40 bg-white dark:bg-black bg:text-white">
             <Link to='/' className="basis-3/12 hidden md:block"> 
                 logo
             </Link>
