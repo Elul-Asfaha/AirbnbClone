@@ -13,11 +13,12 @@ function App() {
 
   const [showProperty,setShowProperty]=useState([]) // used to set the items that show the property details
 
+  const [propertyType,setPropertyType]=useState(0)
+
   useEffect(()=>{
     const property=JSON.parse(sessionStorage.getItem('store_property'))
     property != null && setShowProperty(property)
-    console.log(property)
-  },[])  // this useeffect stores the card data that i want to be displayed in a sessionSorage on the webbrowser
+  },[]) 
   useEffect(()=>{
     showProperty.length!== 0 && sessionStorage.setItem('store_property',JSON.stringify(showProperty))
     },[showProperty]) // this useeffect stores the card data that i want to be displayed in a sessionSorage on the webbrowser
@@ -28,7 +29,7 @@ function App() {
   }
 
   return (
-    <provideData.Provider value={{handleToggleFilter,setShowProperty,showProperty}}>
+    <provideData.Provider value={{handleToggleFilter,setShowProperty,propertyType,setPropertyType,showProperty}}>
       <div className="relative dark:text-white dark:bg-black min-h-screen font-Niramit">
         <Nav/>
         {!toggleFilter && 

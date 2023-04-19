@@ -29,13 +29,15 @@ const Property=()=>{
                     <h2 className="flex text-3xl">Blue Horizon Villa Anatoli, 1BD, private pool</h2>
                     <div className="flex flex-wrap justify-between">
                         <div className="flex flex-wrap gap-3">
-                            <p>
-                                    star {providedData.showProperty.Rating && providedData.showProperty.Rating}
+                            <p className='flex items-center'>
+                                <StarIcon/>
+                                {providedData.showProperty.Rating && providedData.showProperty.Rating}
                             </p>
-                            <div className="flex font-bold underline">3 reviews</div>
+                            <div className="flex font-bold underline">{providedData.showProperty.Reviews && providedData.showProperty.Reviews } reviews</div>
+                            {providedData.Superhost &&
                             <div>
                                 !Superhost
-                            </div>
+                            </div>}
                             <div className="flex font-bold underline">
                                 <p>{providedData.showProperty.City && providedData.showProperty.City},<span> {providedData.showProperty.Country && providedData.showProperty.Country}</span></p>
                             </div>
@@ -71,13 +73,19 @@ const Property=()=>{
                        
                         <div className="border-b border-1 pb-4">
                             <div  className="flex justify-between">
-                                <p className="font-bold max-w-[300px]">Earthen home hosted by {providedData.showProperty.Name && providedData.showProperty.Name}</p><div><AccountCircleIcon style={{fontSize:'50px'}}/></div>
+                                <p className="font-bold max-w-[300px]">Earthen home hosted by {providedData.showProperty.Name && providedData.showProperty.Name}</p>
+                                <div className='w-[50px] h-[50px] flex'>{
+                                    providedData.showProperty.Profile?
+                                    <img src={providedData.showProperty.Profile} alt="" className='container rounded-full'/>
+                                    :<AccountCircleIcon style={{fontSize:'50px'}}/>
+                                    }
+                                </div>
                             </div>
                             <div className="flex gap-1">
                                 <p>2 guests.</p>
-                                <p>1 bedroom</p>
-                                <p>1 bed</p>
-                                <p>1 bath</p>
+                                <p>{providedData.showProperty.BedRooms && providedData.showProperty.BedRooms } bedroom</p>
+                                <p>{providedData.showProperty.BedNo && providedData.showProperty.BedNo } bed</p>
+                                <p>{providedData.showProperty.BathNo && providedData.showProperty.BathNo } bath</p>
                             </div>
                         </div>
                         
@@ -174,10 +182,16 @@ const Property=()=>{
                                     <div className='flex gap-2 items-center'>
                                         <div className='flex'>
                                             <StarIcon/>
-                                            <p>5.0</p>
+                                            <p>
+                                                {providedData.showProperty.Rating && providedData.showProperty.Rating }
+                                            </p>
                                         </div>
                                         <div className='border border-black border-1 h-[1px] w-[1px]'/>
-                                        <p className='underline'>reviews</p>
+                                        <p className='underline'>
+                                        {providedData.showProperty.Reviews && providedData.showProperty.Reviews}
+                                        {' '}
+                                            reviews
+                                        </p>
                                     </div>
                                     
                                 </div>
