@@ -49,7 +49,7 @@ const Nav=()=>{
                 </div>
                 
             </div>
-            <div className='hidden md:flex justify-between gap-5 items-center'>
+            <div className='hidden md:flex gap-5 justify-between items-center'>
                <div className='flex gap-[30px] text-sm overflow-x-scroll overflow-y-hidden scrollbar-hide w-auto break-normal w-[85%]'>
 
                     <button onClick={()=>data.setPropertyType(1)} className='flex flex-col items-center justify-center'>
@@ -153,70 +153,68 @@ const Nav=()=>{
 
                 <div className='flex gap-4 text-sm overflow-x-scroll scrollbar-hide w-auto break-normal'>
 
-                    <div className='flex flex-col items-center justify-center'>
+                    <button className='flex flex-col items-center justify-center' onClick={()=>data.setPropertyType(1)}>
                         <RocketIcon />
                         <div>
                             OMG!
                         </div>
-                    </div>
-                    <div className='flex flex-col items-center justify-center'>
+                    </button>
+                    <button className='flex flex-col items-center justify-center' onClick={()=>data.setPropertyType(2)}>
                         <CoffeeIcon/>
                         <div>
                             Bed & breakfasts
                         </div>
-                    </div>
-                    <div className='flex flex-col items-center justify-center'>
+                    </button>
+                    <button className='flex flex-col items-center justify-center' onClick={()=>data.setPropertyType(3)}>
                         <CottageIcon/>
                         <div>
                             Earth homes
                         </div>
-                    </div>
-                    <div className='flex flex-col items-center justify-center'>
+                    </button>
+                    <button className='flex flex-col items-center justify-center' onClick={()=>data.setPropertyType(4)}>
                         <SingleBedIcon/>
                         <div>
                             Private rooms
                         </div>
-                    </div>
-                    <div className='flex flex-col items-center justify-center'>
+                    </button>
+                    <button className='flex flex-col items-center justify-center' onClick={()=>data.setPropertyType(5)}>
                         <SingleBedIcon/>
                         <div>
                             Private rooms
                         </div>
-                    </div>
+                    </button>
 
-                    <div className='flex flex-col items-center justify-center'>
+                    <button className='flex flex-col items-center justify-center' onClick={()=>data.setPropertyType(6)}>
                         <SingleBedIcon/>
                         <div>
                             Private rooms
                         </div>
-                    </div>
-                    <div className='flex flex-col items-center justify-center'>
+                    </button>
+                    <button className='flex flex-col items-center justify-center' onClick={()=>data.setPropertyType(7)}>
                         <SingleBedIcon/>
                         <div>
                             Private rooms
                         </div>
-                    </div>
-                    <div className='flex flex-col items-center justify-center'>
+                    </button>
+                    <button className='flex flex-col items-center justify-center' onClick={()=>data.setPropertyType(8)}>
                         <SingleBedIcon/>
                         <div>
                             Private rooms
                         </div>
-                    </div>
+                    </button>
 
-                    <div className='flex flex-col items-center justify-center'>
+                    <button className='flex flex-col items-center justify-center' onClick={()=>data.setPropertyType(9)}>
                         <SingleBedIcon/>
                         <div>
                             Private rooms
                         </div>
-                    </div>
-                    <div className='flex flex-col items-center justify-center'>
+                    </button>
+                    <button className='flex flex-col items-center justify-center' onClick={()=>data.setPropertyType(10)}>
                         <SingleBedIcon/>
                         <div>
                             Private rooms
                         </div>
-                    </div>
-
-
+                    </button>
 
                 </div>
             </div>
