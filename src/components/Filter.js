@@ -1,37 +1,19 @@
-import CloseIcon from '@mui/icons-material/Close';
-import { useContext, useState } from 'react';
+import materialUiImports from './imports/materialUiImports';
+import { useContext } from 'react';
 import { provideData } from "../App"
 
 const Filter=()=>{
     const data=useContext(provideData)
-    const [currentFilter,setCurrentFilter]=useState({
-        minPrice: 8,
-        maxPrice: 20,
-        entirePlace: false,
-        privateRoom: false,
-        roomNo: '',
-        bedNo:'',
-        propertyType: '',
-        bathRooms:'',
-        wifi: false,
-        Kitchen: false,
-        instantBooking: false,
-        selfCheckin:'',
-        noSteps: false,
-        entranceWidth: false,
-        superhost: false,
-        plus: false
-
-    })
+    
     const handleCurrentFilter=(e)=>{
         e.preventDefault();
         const {name,value}=e.target;
  
-        setCurrentFilter({
-            ...currentFilter,
+        data.setCurrentFilter({
+            ...data.currentFilter,
             [name]: value
         });
-        console.log(currentFilter)
+        console.log(data.currentFilter)
         
     }
 
@@ -39,15 +21,15 @@ const Filter=()=>{
         e.preventDefault();
         const {name,checked}=e.target;
         
-        setCurrentFilter({
-            ...currentFilter,
+        data.setCurrentFilter({
+            ...data.currentFilter,
             [name]: checked
         })
     }
 
     const handleClearFilters=(e)=>{
         e.preventDefault();
-        setCurrentFilter(
+        data.setCurrentFilter(
             {
                 minPrice: 8,
                 maxPrice: 20,
@@ -72,7 +54,7 @@ const Filter=()=>{
         <div className="absolute w-full top-0 dark:bg-white/[30%] bg-black/[30%] z-50">
             <div className='mt-[20px] dark:text-white dark:bg-black bg-white rounded-md'>
                 <div className="flex justify-center relative px-5 py-3 border-b border-1">
-                    <div className="absolute left-[5%]"><CloseIcon className='cursor-pointer' onClick={data.handleToggleFilter}/></div>
+                    <div className="absolute left-[5%]"><materialUiImports.CloseIcon className='cursor-pointer' onClick={data.handleToggleFilter}/></div>
                     <p className="font-bold">Filters</p>
                 </div>
 
@@ -85,7 +67,7 @@ const Filter=()=>{
                                 <p>min price</p>
                                 <div className="flex gap-1">
                                     <p>$</p>
-                                    <input type='number' name="minPrice" value={currentFilter.minPrice} onChange={handleCurrentFilter} className="w-full outline-none dark:text-black dark:bg-white" placeholder={currentFilter.minPrice}/>
+                                    <input type='number' name="minPrice" value={data.currentFilter.minPrice} onChange={handleCurrentFilter} className="w-full outline-none dark:text-black dark:bg-white" placeholder={data.currentFilter.minPrice}/>
                                 </div>
                             </div>
                             <p>-</p>
@@ -93,7 +75,7 @@ const Filter=()=>{
                                 <p>max price</p>
                                 <div className="flex gap-1">
                                     <p>$</p>
-                                    <input type='number' name="maxPrice" value={currentFilter.maxPrice} onChange={handleCurrentFilter} className="w-full outline-none dark:text-black dark:bg-white" placeholder={currentFilter.maxPrice}/>
+                                    <input type='number' name="maxPrice" value={data.currentFilter.maxPrice} onChange={handleCurrentFilter} className="w-full outline-none dark:text-black dark:bg-white" placeholder={data.currentFilter.maxPrice}/>
                                 </div>
                             </div>
                         </div>
@@ -128,14 +110,14 @@ const Filter=()=>{
                             <div className="overflow-x-auto scrollbar-hide">
                                 <div className="flex gap-5">
                                     <button className="py-3 px-5 dark:bg-white dark:text-black bg-black text-white rounded-full hover:bg-gray-200" value="" name="roomNo" onClick={handleCurrentFilter}>Any</button>
-                                    <button className="py-3 px-5 border border-1 rounded-full hover:bg-gray-200" value="1" name="roomNo" style={{backgroundColor:currentFilter.roomNo==="1"&& 'gray' }} onClick={handleCurrentFilter}>1</button>
-                                    <button className="py-3 px-5 border border-1 rounded-full hover:bg-gray-200" value="2" name="roomNo" style={{backgroundColor:currentFilter.roomNo==="2"&& 'gray' }} onClick={handleCurrentFilter}>2</button>
-                                    <button className="py-3 px-5 border border-1 rounded-full hover:bg-gray-200" value="3" name="roomNo" style={{backgroundColor:currentFilter.roomNo==="3"&& 'gray' }} onClick={handleCurrentFilter}>3</button>
-                                    <button className="py-3 px-5 border border-1 rounded-full hover:bg-gray-200" value="4" name="roomNo" style={{backgroundColor:currentFilter.roomNo==="4"&& 'gray' }} onClick={handleCurrentFilter}>4</button>
-                                    <button className="py-3 px-5 border border-1 rounded-full hover:bg-gray-200" value="5" name="roomNo" style={{backgroundColor:currentFilter.roomNo==="5"&& 'gray' }} onClick={handleCurrentFilter}>5</button>
-                                    <button className="py-3 px-5 border border-1 rounded-full hover:bg-gray-200" value="6" name="roomNo" style={{backgroundColor:currentFilter.roomNo==="6"&& 'gray' }} onClick={handleCurrentFilter}>6</button>
-                                    <button className="py-3 px-5 border border-1 rounded-full hover:bg-gray-200" value="7" name="roomNo" style={{backgroundColor:currentFilter.roomNo==="7"&& 'gray' }} onClick={handleCurrentFilter}>7</button>
-                                    <button className="py-3 px-5 border border-1 rounded-full hover:bg-gray-200" value="8" name="roomNo" style={{backgroundColor:currentFilter.roomNo==="8"&& 'gray' }} onClick={handleCurrentFilter}>8+</button>
+                                    <button className="py-3 px-5 border border-1 rounded-full hover:bg-gray-200" value="1" name="roomNo" style={{backgroundColor:data.currentFilter.roomNo==="1"&& 'gray' }} onClick={handleCurrentFilter}>1</button>
+                                    <button className="py-3 px-5 border border-1 rounded-full hover:bg-gray-200" value="2" name="roomNo" style={{backgroundColor:data.currentFilter.roomNo==="2"&& 'gray' }} onClick={handleCurrentFilter}>2</button>
+                                    <button className="py-3 px-5 border border-1 rounded-full hover:bg-gray-200" value="3" name="roomNo" style={{backgroundColor:data.currentFilter.roomNo==="3"&& 'gray' }} onClick={handleCurrentFilter}>3</button>
+                                    <button className="py-3 px-5 border border-1 rounded-full hover:bg-gray-200" value="4" name="roomNo" style={{backgroundColor:data.currentFilter.roomNo==="4"&& 'gray' }} onClick={handleCurrentFilter}>4</button>
+                                    <button className="py-3 px-5 border border-1 rounded-full hover:bg-gray-200" value="5" name="roomNo" style={{backgroundColor:data.currentFilter.roomNo==="5"&& 'gray' }} onClick={handleCurrentFilter}>5</button>
+                                    <button className="py-3 px-5 border border-1 rounded-full hover:bg-gray-200" value="6" name="roomNo" style={{backgroundColor:data.currentFilter.roomNo==="6"&& 'gray' }} onClick={handleCurrentFilter}>6</button>
+                                    <button className="py-3 px-5 border border-1 rounded-full hover:bg-gray-200" value="7" name="roomNo" style={{backgroundColor:data.currentFilter.roomNo==="7"&& 'gray' }} onClick={handleCurrentFilter}>7</button>
+                                    <button className="py-3 px-5 border border-1 rounded-full hover:bg-gray-200" value="8" name="roomNo" style={{backgroundColor:data.currentFilter.roomNo==="8"&& 'gray' }} onClick={handleCurrentFilter}>8+</button>
                                 </div>
                             </div>
                         </div>
@@ -144,14 +126,14 @@ const Filter=()=>{
                             <div className="overflow-x-auto scrollbar-hide">
                                 <div className="flex gap-5">
                                     <button className="py-3 px-5 dark:bg-white dark:text-black bg-black text-white rounded-full hover:bg-gray-200" value="" name="bedNo" onClick={handleCurrentFilter}>Any</button>
-                                    <button className="py-3 px-5 border border-1 rounded-full hover:bg-gray-200" value="1" name="bedNo" style={{backgroundColor:currentFilter.bedNo==="1"&& 'gray' }} onClick={handleCurrentFilter}>1</button>
-                                    <button className="py-3 px-5 border border-1 rounded-full hover:bg-gray-200" value="2" name="bedNo" style={{backgroundColor:currentFilter.bedNo==="2"&& 'gray' }} onClick={handleCurrentFilter}>2</button>
-                                    <button className="py-3 px-5 border border-1 rounded-full hover:bg-gray-200" value="3" name="bedNo" style={{backgroundColor:currentFilter.bedNo==="3"&& 'gray' }} onClick={handleCurrentFilter}>3</button>
-                                    <button className="py-3 px-5 border border-1 rounded-full hover:bg-gray-200" value="4" name="bedNo" style={{backgroundColor:currentFilter.bedNo==="4"&& 'gray' }} onClick={handleCurrentFilter}>4</button>
-                                    <button className="py-3 px-5 border border-1 rounded-full hover:bg-gray-200" value="5" name="bedNo" style={{backgroundColor:currentFilter.bedNo==="5"&& 'gray' }} onClick={handleCurrentFilter}>5</button>
-                                    <button className="py-3 px-5 border border-1 rounded-full hover:bg-gray-200" value="6" name="bedNo" style={{backgroundColor:currentFilter.bedNo==="6"&& 'gray' }} onClick={handleCurrentFilter}>6</button>
-                                    <button className="py-3 px-5 border border-1 rounded-full hover:bg-gray-200" value="7" name="bedNo" style={{backgroundColor:currentFilter.bedNo==="7"&& 'gray' }} onClick={handleCurrentFilter}>7</button>
-                                    <button className="py-3 px-5 border border-1 rounded-full hover:bg-gray-200" value="8" name="bedNo" style={{backgroundColor:currentFilter.bedNo==="8"&& 'gray' }} onClick={handleCurrentFilter}>8+</button>
+                                    <button className="py-3 px-5 border border-1 rounded-full hover:bg-gray-200" value="1" name="bedNo" style={{backgroundColor:data.currentFilter.bedNo==="1"&& 'gray' }} onClick={handleCurrentFilter}>1</button>
+                                    <button className="py-3 px-5 border border-1 rounded-full hover:bg-gray-200" value="2" name="bedNo" style={{backgroundColor:data.currentFilter.bedNo==="2"&& 'gray' }} onClick={handleCurrentFilter}>2</button>
+                                    <button className="py-3 px-5 border border-1 rounded-full hover:bg-gray-200" value="3" name="bedNo" style={{backgroundColor:data.currentFilter.bedNo==="3"&& 'gray' }} onClick={handleCurrentFilter}>3</button>
+                                    <button className="py-3 px-5 border border-1 rounded-full hover:bg-gray-200" value="4" name="bedNo" style={{backgroundColor:data.currentFilter.bedNo==="4"&& 'gray' }} onClick={handleCurrentFilter}>4</button>
+                                    <button className="py-3 px-5 border border-1 rounded-full hover:bg-gray-200" value="5" name="bedNo" style={{backgroundColor:data.currentFilter.bedNo==="5"&& 'gray' }} onClick={handleCurrentFilter}>5</button>
+                                    <button className="py-3 px-5 border border-1 rounded-full hover:bg-gray-200" value="6" name="bedNo" style={{backgroundColor:data.currentFilter.bedNo==="6"&& 'gray' }} onClick={handleCurrentFilter}>6</button>
+                                    <button className="py-3 px-5 border border-1 rounded-full hover:bg-gray-200" value="7" name="bedNo" style={{backgroundColor:data.currentFilter.bedNo==="7"&& 'gray' }} onClick={handleCurrentFilter}>7</button>
+                                    <button className="py-3 px-5 border border-1 rounded-full hover:bg-gray-200" value="8" name="bedNo" style={{backgroundColor:data.currentFilter.bedNo==="8"&& 'gray' }} onClick={handleCurrentFilter}>8+</button>
                                 </div>
                             </div>
                         </div>
@@ -159,15 +141,15 @@ const Filter=()=>{
                             <p className="font-bold">Bathrooms</p>
                             <div className="overflow-x-auto scrollbar-hide">
                                 <div className="flex gap-5">
-                                    <button className="py-3 px-5 dark:bg-white dark:text-black bg-black text-white rounded-full hover:bg-gray-200" value="1" name="bathRooms" onClick={handleCurrentFilter}>Any</button>
-                                    <button className="py-3 px-5 border border-1 rounded-full hover:bg-gray-200" value="1" name="bathRooms" style={{backgroundColor:currentFilter.bathRooms==="1"&& 'gray' }} onClick={handleCurrentFilter}>1</button>
-                                    <button className="py-3 px-5 border border-1 rounded-full hover:bg-gray-200" value="2" name="bathRooms" style={{backgroundColor:currentFilter.bathRooms==="2"&& 'gray' }} onClick={handleCurrentFilter}>2</button>
-                                    <button className="py-3 px-5 border border-1 rounded-full hover:bg-gray-200" value="3" name="bathRooms" style={{backgroundColor:currentFilter.bathRooms==="3"&& 'gray' }} onClick={handleCurrentFilter}>3</button>
-                                    <button className="py-3 px-5 border border-1 rounded-full hover:bg-gray-200" value="4" name="bathRooms" style={{backgroundColor:currentFilter.bathRooms==="4"&& 'gray' }} onClick={handleCurrentFilter}>4</button>
-                                    <button className="py-3 px-5 border border-1 rounded-full hover:bg-gray-200" value="5" name="bathRooms" style={{backgroundColor:currentFilter.bathRooms==="5"&& 'gray' }} onClick={handleCurrentFilter}>5</button>
-                                    <button className="py-3 px-5 border border-1 rounded-full hover:bg-gray-200" value="6" name="bathRooms" style={{backgroundColor:currentFilter.bathRooms==="6"&& 'gray' }} onClick={handleCurrentFilter}>6</button>
-                                    <button className="py-3 px-5 border border-1 rounded-full hover:bg-gray-200" value="7" name="bathRooms" style={{backgroundColor:currentFilter.bathRooms==="7"&& 'gray' }} onClick={handleCurrentFilter}>7</button>
-                                    <button className="py-3 px-5 border border-1 rounded-full hover:bg-gray-200" value="8" name="bathRooms" style={{backgroundColor:currentFilter.bathRooms==="8"&& 'gray' }} onClick={handleCurrentFilter}>8+</button>
+                                    <button className="py-3 px-5 dark:bg-white dark:text-black bg-black text-white rounded-full hover:bg-gray-200" value="" name="bathRooms" onClick={handleCurrentFilter}>Any</button>
+                                    <button className="py-3 px-5 border border-1 rounded-full hover:bg-gray-200" value="1" name="bathRooms" style={{backgroundColor:data.currentFilter.bathRooms==="1"&& 'gray' }} onClick={handleCurrentFilter}>1</button>
+                                    <button className="py-3 px-5 border border-1 rounded-full hover:bg-gray-200" value="2" name="bathRooms" style={{backgroundColor:data.currentFilter.bathRooms==="2"&& 'gray' }} onClick={handleCurrentFilter}>2</button>
+                                    <button className="py-3 px-5 border border-1 rounded-full hover:bg-gray-200" value="3" name="bathRooms" style={{backgroundColor:data.currentFilter.bathRooms==="3"&& 'gray' }} onClick={handleCurrentFilter}>3</button>
+                                    <button className="py-3 px-5 border border-1 rounded-full hover:bg-gray-200" value="4" name="bathRooms" style={{backgroundColor:data.currentFilter.bathRooms==="4"&& 'gray' }} onClick={handleCurrentFilter}>4</button>
+                                    <button className="py-3 px-5 border border-1 rounded-full hover:bg-gray-200" value="5" name="bathRooms" style={{backgroundColor:data.currentFilter.bathRooms==="5"&& 'gray' }} onClick={handleCurrentFilter}>5</button>
+                                    <button className="py-3 px-5 border border-1 rounded-full hover:bg-gray-200" value="6" name="bathRooms" style={{backgroundColor:data.currentFilter.bathRooms==="6"&& 'gray' }} onClick={handleCurrentFilter}>6</button>
+                                    <button className="py-3 px-5 border border-1 rounded-full hover:bg-gray-200" value="7" name="bathRooms" style={{backgroundColor:data.currentFilter.bathRooms==="7"&& 'gray' }} onClick={handleCurrentFilter}>7</button>
+                                    <button className="py-3 px-5 border border-1 rounded-full hover:bg-gray-200" value="8" name="bathRooms" style={{backgroundColor:data.currentFilter.bathRooms==="8"&& 'gray' }} onClick={handleCurrentFilter}>8+</button>
                                 </div>
                             </div>
                         </div>
@@ -179,19 +161,19 @@ const Filter=()=>{
                         <p className="font-bold">Property type</p>
                         <div>
                             <div className="grid grid-cols-2 gap-5">
-                                <button name='propertyType' value='Home' onClick={handleCurrentFilter} style={{borderColor: currentFilter.propertyType==='Home'?'black':''}} className="border border-1 rounded-xl min-h-[100px] p-5 flex flex-col justify-between cursor-pointer">
+                                <button name='propertyType' value='Home' onClick={handleCurrentFilter} style={{borderColor: data.currentFilter.propertyType==='Home'?'black':''}} className="border border-1 rounded-xl min-h-[100px] p-5 flex flex-col justify-between cursor-pointer">
                                     <div>h</div>
                                     <p>Home</p>
                                 </button>
-                                <button name='propertyType' value='Apartment' onClick={handleCurrentFilter} style={{borderColor: currentFilter.propertyType==='Apartment'?'black':''}} className="border border-1 rounded-xl  min-h-[100px] p-5 flex flex-col justify-between cursor-pointer">
+                                <button name='propertyType' value='Apartment' onClick={handleCurrentFilter} style={{borderColor: data.currentFilter.propertyType==='Apartment'?'black':''}} className="border border-1 rounded-xl  min-h-[100px] p-5 flex flex-col justify-between cursor-pointer">
                                     <div>A</div>
                                     <p>Apartment</p>
                                 </button>
-                                <button name='propertyType' value='Guesthouse' onClick={handleCurrentFilter} style={{borderColor: currentFilter.propertyType==='Guesthouse'?'black':''}} className="border border-1 rounded-xl  min-h-[100px] p-5 flex flex-col justify-between cursor-pointer">
+                                <button name='propertyType' value='Guesthouse' onClick={handleCurrentFilter} style={{borderColor: data.currentFilter.propertyType==='Guesthouse'?'black':''}} className="border border-1 rounded-xl  min-h-[100px] p-5 flex flex-col justify-between cursor-pointer">
                                     <div>g</div>
                                     <p>Guesthouse</p>
                                 </button>
-                                <button name='propertyType' value='Hotel' onClick={handleCurrentFilter} style={{borderColor: currentFilter.propertyType==='Hotel'?'black':''}} className="border border-1 rounded-xl  min-h-[100px] p-5 flex flex-col justify-between cursor-pointer">
+                                <button name='propertyType' value='Hotel' onClick={handleCurrentFilter} style={{borderColor: data.currentFilter.propertyType==='Hotel'?'black':''}} className="border border-1 rounded-xl  min-h-[100px] p-5 flex flex-col justify-between cursor-pointer">
                                     <div>h</div>
                                     <p>Hotel</p>
                                 </button>

@@ -1,17 +1,4 @@
-import AccountCircleIcon from '@mui/icons-material/AccountCircle';
-import KeyIcon from '@mui/icons-material/Key';
-import EditCalendarIcon from '@mui/icons-material/EditCalendar';
-import FeaturedPlayListIcon from '@mui/icons-material/FeaturedPlayList';
-import AirCover from '../images/AirCover.png'
-import BathtubIcon from '@mui/icons-material/Bathtub';
-import HotTubIcon from '@mui/icons-material/HotTub';
-import NotificationsIcon from '@mui/icons-material/Notifications';
-import AddAlertIcon from '@mui/icons-material/AddAlert';
-import WifiIcon from '@mui/icons-material/Wifi';
-import AcUnitIcon from '@mui/icons-material/AcUnit';
-import LocalParkingIcon from '@mui/icons-material/LocalParking';
-import StarIcon from '@mui/icons-material/Star';
-import FlagIcon from '@mui/icons-material/Flag';
+import materialUiImports from '../components/imports/materialUiImports';
 import { useContext, useEffect } from 'react';
 import { provideData } from '../App';
 
@@ -21,7 +8,6 @@ const Property=()=>{
         window.scrollTo(0,0)
     },[])
     
-    
     return(
             <div id={providedData.id && providedData.id} className="min-h-screen flex flex-col gap-5 py-5 md:px-[5%] lg:px-[10%] xl:px-[15%] md:pb-[13%] lg:pb-[5%] relative">
 
@@ -30,14 +16,13 @@ const Property=()=>{
                     <div className="flex flex-wrap justify-between">
                         <div className="flex flex-wrap gap-3">
                             <p className='flex items-center'>
-                                <StarIcon/>
+                                <materialUiImports.StarIcon/>
                                 {providedData.showProperty.Rating && providedData.showProperty.Rating}
                             </p>
                             <div className="flex font-bold underline">{providedData.showProperty.Reviews && providedData.showProperty.Reviews } reviews</div>
-                            {providedData.Superhost &&
-                            <div>
-                                !Superhost
-                            </div>}
+                            {providedData.showProperty.Superhost && 
+                            <div className='flex items-center justify-center'><materialUiImports.PriorityHighIcon/>Superhost  </div>
+                            }
                             <div className="flex font-bold underline">
                                 <p>{providedData.showProperty.City && providedData.showProperty.City},<span> {providedData.showProperty.Country && providedData.showProperty.Country}</span></p>
                             </div>
@@ -77,7 +62,7 @@ const Property=()=>{
                                 <div className='w-[50px] h-[50px] flex'>{
                                     providedData.showProperty.Profile?
                                     <img src={providedData.showProperty.Profile} alt="" className='container rounded-full'/>
-                                    :<AccountCircleIcon style={{fontSize:'50px'}}/>
+                                    :<materialUiImports.AccountCircleIcon style={{fontSize:'50px'}}/>
                                     }
                                 </div>
                             </div>
@@ -85,27 +70,27 @@ const Property=()=>{
                                 <p>2 guests.</p>
                                 <p>{providedData.showProperty.BedRooms && providedData.showProperty.BedRooms } bedroom</p>
                                 <p>{providedData.showProperty.BedNo && providedData.showProperty.BedNo } bed</p>
-                                <p>{providedData.showProperty.BathNo && providedData.showProperty.BathNo } bath</p>
+                                <p>{providedData.showProperty.BathNo && providedData.showProperty.BathNo } bath rooms</p>
                             </div>
                         </div>
                         
                         <div className="flex flex-col gap-5 py-5 border-b border-1 pb-4">
                             <div className="flex gap-5">
-                                <div><FeaturedPlayListIcon/></div>
+                                <div><materialUiImports.FeaturedPlayListIcon/></div>
                                 <div>
                                     <p className='font-semibold'>Featured in</p>
                                     <p className='text-gray-500'>Conde nast traverler, june 2021</p>
                                 </div>
                             </div>
                             <div className="flex gap-5">
-                                <div><KeyIcon  className='rotate-45'/></div>
+                                <div><materialUiImports.KeyIcon  className='rotate-45'/></div>
                                 <div>
                                     <p className='font-semibold'>Great check-in experience</p>
                                     <p className='text-gray-500'>90% of recent guests gave the check-in process a 5-star rating.</p>
                                 </div>
                             </div>
                             <div className="flex gap-5">
-                                <div className=''><EditCalendarIcon/></div>
+                                <div className=''><materialUiImports.EditCalendarIcon/></div>
                                 <div>
                                     <p className='font-semibold'>Free cancellation before Apr 30.</p>
                                 </div>
@@ -113,7 +98,7 @@ const Property=()=>{
                         </div>
 
                         <div className="flex flex-col gap-5 py-5 border-b border-1 pb-4">
-                            <img src={AirCover} width='200px' alt=''/>
+                            <img src={materialUiImports.AirCover} width='200px' alt=''/>
                             <div>
                                 Every booking includes free protection from Host cancellations, listing inaccuracies, and other issues like trouble checking in.
                             </div>
@@ -126,31 +111,31 @@ const Property=()=>{
                             <p className='text-3xl'>What this place offers</p>
                             <ul className='flex flex-col lg:grid lg:grid-cols-2 gap-3'>
                                 <li className='flex gap-5'>
-                                    <div><WifiIcon/></div>
+                                    <div><materialUiImports.WifiIcon/></div>
                                     <div>Wifi</div>
                                 </li>
                                 <li className='flex gap-5'> 
-                                    <div><LocalParkingIcon/></div> 
+                                    <div><materialUiImports.LocalParkingIcon/></div> 
                                     <div>Free parking on premises</div>
                                 </li>
                                 <li className='flex gap-5'> 
-                                    <div><HotTubIcon/></div> 
+                                    <div><materialUiImports.HotTubIcon/></div> 
                                     <div>Private hot tub - available all year</div>
                                 </li>
                                 <li className='flex gap-5'> 
-                                    <div><AcUnitIcon/></div> 
+                                    <div><materialUiImports.AcUnitIcon/></div> 
                                     <div>Central air conditioning</div>
                                 </li>
                                 <li className='flex gap-5'> 
-                                    <div><BathtubIcon/></div> 
+                                    <div><materialUiImports.BathtubIcon/></div> 
                                     <div>Bathtub</div>
                                 </li>
                                 <li className='flex gap-5'> 
-                                    <div><NotificationsIcon/></div> 
+                                    <div><materialUiImports.NotificationsIcon/></div> 
                                     <div>Carbon monoxide alarm</div>
                                 </li>
                                 <li className='flex gap-5'> 
-                                    <div><AddAlertIcon/></div> 
+                                    <div><materialUiImports.AddAlertIcon/></div> 
                                     <div>Smoke alarm</div>
                                 </li>
                             </ul>
@@ -181,7 +166,7 @@ const Property=()=>{
                                     <p><span className='font-bold'>$ {providedData.showProperty.Price && providedData.showProperty.Price}</span> night</p>
                                     <div className='flex gap-2 items-center'>
                                         <div className='flex'>
-                                            <StarIcon/>
+                                            <materialUiImports.StarIcon/>
                                             <p>
                                                 {providedData.showProperty.Rating && providedData.showProperty.Rating }
                                             </p>
@@ -223,7 +208,7 @@ const Property=()=>{
                                 </div>
                             </div>
                             <div className='flex sticky top-0 mt-5 justify-center items-center gap-2'>
-                                <FlagIcon/>
+                                <materialUiImports.FlagIcon/>
                                 <p className='text-gray-400 underline'>Report this listing</p>
                             </div>
                         </div>

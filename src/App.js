@@ -13,7 +13,26 @@ function App() {
 
   const [showProperty,setShowProperty]=useState([]) // used to set the items that show the property details
 
-  const [propertyType,setPropertyType]=useState(0)
+  const [currentFilter,setCurrentFilter]=useState({
+    minPrice: 8,
+    maxPrice: 20,
+    entirePlace: false,
+    privateRoom: false,
+    roomNo: 0,
+    bedNo:0,
+    propertyType: '',
+    bathRooms:0,
+    wifi: false,
+    Kitchen: false,
+    instantBooking: false,
+    selfCheckin:false,
+    noSteps: false,
+    entranceWidth: false,
+    superhost: false,
+    plus: false
+
+  })
+  const [propertyType,setPropertyType]=useState("")
 
   useEffect(()=>{
     const property=JSON.parse(sessionStorage.getItem('store_property'))
@@ -28,8 +47,17 @@ function App() {
     setToggleFilter(!toggleFilter)
   }
 
+
+
+
+
+
+
+
+
+
   return (
-    <provideData.Provider value={{handleToggleFilter,setShowProperty,propertyType,setPropertyType,showProperty}}>
+    <provideData.Provider value={{handleToggleFilter,setShowProperty,propertyType,setPropertyType,showProperty,setCurrentFilter,currentFilter}}>
       <div className="relative dark:text-white dark:bg-black min-h-screen font-Niramit">
         <Nav/>
         {!toggleFilter && 
