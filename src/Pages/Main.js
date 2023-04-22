@@ -19,9 +19,9 @@ const Main=()=>{
     console.log(providedData.currentFilter)
 
     
-    const dispData=providedData.propertyType===""?
+    const dispData=providedData.propertyType!==0?
     data.filter(item=>
-        item.PropertyType!==providedData.propertyType &&
+        item.PropertyType===providedData.propertyType &&
         item.Superhost>=providedData.currentFilter.superhost && 
         item.Guests>=providedData.currentFilter.entirePlace && 
         item.BedNo>=providedData.currentFilter.bedNo && 
@@ -29,6 +29,7 @@ const Main=()=>{
         item.BathNo>=providedData.currentFilter.bathRooms
         ).map(items=><Card key={items.id} data={items} />):
     data.filter(item=> 
+        item.PropertyType!==providedData.propertyType &&
         item.Superhost>=providedData.currentFilter.superhost && 
         item.Guests>=providedData.currentFilter.entirePlace && 
         item.BedNo>=providedData.currentFilter.bedNo && 

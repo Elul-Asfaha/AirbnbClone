@@ -32,7 +32,7 @@ function App() {
     plus: false
 
   })
-  const [propertyType,setPropertyType]=useState("")
+  const [propertyType,setPropertyType]=useState(0)
 
   useEffect(()=>{
     const property=JSON.parse(sessionStorage.getItem('store_property'))

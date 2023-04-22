@@ -45,7 +45,7 @@ const Nav=()=>{
             <div className='hidden md:flex gap-5 justify-between items-center'>
                <div className='flex gap-[30px] text-sm overflow-x-scroll overflow-y-hidden scrollbar-hide w-auto break-normal w-[85%]'>
 
-                    <Link to="/" onClick={()=>data.setPropertyType("")} className='flex flex-col items-center justify-center'>
+                    <Link to="/" onClick={()=>data.setPropertyType(0)} className='flex flex-col items-center justify-center'>
                         <materialUiImports.RocketIcon />
                         <div>
                             OMG!
@@ -146,7 +146,7 @@ const Nav=()=>{
 
                 <div className='flex gap-4 text-sm overflow-x-scroll scrollbar-hide w-auto break-normal'>
 
-                    <Link to="/" className='flex flex-col items-center justify-center' onClick={()=>data.setPropertyType("")}>
+                    <Link to="/" className='flex flex-col items-center justify-center' onClick={()=>data.setPropertyType(0)}>
                         <materialUiImports.RocketIcon />
                         <div>
                             OMG!
