@@ -52,7 +52,7 @@ const materialUiImports={
     FilterAltIcon: FilterAltIcon,
     KeyboardArrowUpIcon: KeyboardArrowUpIcon,
     FavoriteBorderIcon: FavoriteBorderIcon,
-    CloseIcon: CloseIcon
+    CloseIcon: CloseIcon,
 
 }
 export default materialUiImports

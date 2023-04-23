@@ -1,6 +1,4 @@
-import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
-import LanguageIcon from '@mui/icons-material/Language';
-
+import materialUiImports from './imports/materialUiImports';
 const Footer=()=>{
     return(
         <div className="md:sticky bottom-0 px-[5%] dark:bg-black dark:text-white bg-gray-100 w-full border-t border-1  offset-0">
@@ -27,10 +25,11 @@ const Footer=()=>{
                         </li>
                     </ul>
                 </div>
+                
                 <div className='basis-5/12 flex items-center justify-end'>
                     <ul className='flex gap-2'>
                         <li className='flex items-center hover:underline cursor-pointer'>
-                            <LanguageIcon/>
+                            <materialUiImports.LanguageIcon/>
                             <p>
                                 English (US)
                             </p>
@@ -42,7 +41,7 @@ const Footer=()=>{
                             <p className='underline'>
                                 Support & resources
                             </p>
-                            <KeyboardArrowUpIcon/>
+                            <materialUiImports.KeyboardArrowUpIcon/>
                         </li>
                     </ul>
                 </div>
@@ -150,7 +149,7 @@ const Footer=()=>{
                 <div className='flex flex-col gap-2 mt-3'>
                     <ul className='flex gap-2 font-semibold'>
                             <li className='flex items-center'>
-                                <LanguageIcon/>
+                                <materialUiImports.LanguageIcon/>
                                 <p>
                                     English (US)
                                 </p>
