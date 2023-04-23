@@ -20,6 +20,8 @@ const Main=()=>{
     const dispData=providedData.propertyType!==0?
     data.filter(item=>
         item.PropertyType===providedData.propertyType &&
+        item.Price>=providedData.currentFilter.minPrice &&
+        item.Price<=providedData.currentFilter.maxPrice &&  
         item.Superhost>=providedData.currentFilter.superhost && 
         item.Guests>=providedData.currentFilter.entirePlace && 
         item.BedNo>=providedData.currentFilter.bedNo && 
@@ -28,14 +30,18 @@ const Main=()=>{
         ).map(item=><Card id={item.id} key={item.id} data={item} />):
     data.filter(item=> 
         item.PropertyType!==providedData.propertyType &&
+        item.Price>=providedData.currentFilter.minPrice &&  
+        item.Price<=providedData.currentFilter.maxPrice &&  
         item.Superhost>=providedData.currentFilter.superhost && 
         item.Guests>=providedData.currentFilter.entirePlace && 
         item.BedNo>=providedData.currentFilter.bedNo && 
         item.BedRooms>=providedData.currentFilter.roomNo && 
         item.BathNo>=providedData.currentFilter.bathRooms)
         .map(item=><Card key={item.id} data={item} />)
-    
-        const dispEmpty=<div className='flex justify-center text-center underline'>
+       
+        console.log(data.filter(item=>item.Price>=providedData.currentFilter.minPrice))
+       
+       const dispEmpty=<div className='flex justify-center text-center underline'>
             oops! we couldnt find any matches. 
         </div> 
     return(

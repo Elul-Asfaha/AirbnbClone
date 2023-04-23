@@ -18,8 +18,8 @@ function App() {
   const [addToFavoriteToggle,setAddToFavoriteToggle]=useState(false)// used to toggle the favorite window
 
   const [currentFilter,setCurrentFilter]=useState({
-    minPrice: 8,
-    maxPrice: 20,
+    minPrice: 10,
+    maxPrice: 3000,
     entirePlace: false,
     privateRoom: false,
     roomNo: 0,

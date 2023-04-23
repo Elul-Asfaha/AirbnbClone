@@ -8,6 +8,9 @@ const Nav=()=>{
     
     return(
         <div className="sticky top-0 z-40  bg-white dark:bg-black bg:text-white overflow-hidden border-b border-1  px-[5%] pb-1">
+            <div className='absolute inset-0 h-[30px]'>
+                             Wishlist ({providedData.Favorite.length})
+            </div>
             <div className='flex items-center lg:justify-between md:py-4'>
                 <Link to='/' className="basis-3/12 hidden md:block"> 
                     logo
@@ -38,11 +41,7 @@ const Nav=()=>{
                     <div className='flex justify-evenly rounded-full border border-1 gap-3 px-1 py-2 hover:shadow hover:shadow cursor-pointer'>
                         <materialUiImports.MenuIcon/>
                         <materialUiImports.AccountCircleIcon/>
-                        <div className='absolute inset-0'>
-                    Wishlist ({providedData.Favorite.length})
-                </div>
                     </div>
-
                 </div>
                 
             </div>
