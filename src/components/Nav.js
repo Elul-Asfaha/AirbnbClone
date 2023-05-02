@@ -7,9 +7,9 @@ const Nav=()=>{
     const providedData=useContext(provideData)
     
     return(
-        <div className="sticky top-0 z-40  bg-white dark:bg-black bg:text-white overflow-hidden border-b border-1  px-[5%] pb-1">
+        <div className="sticky top-0 z-40  bg-white dark:bg-black bg:text-white overflow-hidden border-b border-1  px-[5%]">
             <div className='absolute inset-0 h-[30px]'>
-                             Wishlist ({providedData.Favorite.length})
+                             Wishlist ({providedData.favorite.length})
             </div>
             <div className='flex items-center lg:justify-between md:py-4'>
                 <Link to='/' className="basis-3/12 hidden md:block"> 
@@ -31,7 +31,7 @@ const Nav=()=>{
                     </div>
                 </div>
 
-                <div className="basis-4/12 hidden md:flex lg:basis-4/12 xl:basis-2/12 justify-between items-center gap-1 cursor-pointer">
+                <div className="basis-4/12 hidden md:flex lg:basis-4/12 xl:basis-3/12 justify-between items-center gap-1 cursor-pointer">
                     <div className='dark:hover:bg-gray-700 hover:bg-gray-100 p-3 rounded-full'>
                         Airbnb your home
                     </div>
@@ -48,75 +48,75 @@ const Nav=()=>{
             <div className='hidden md:flex gap-5 justify-between items-center'>
                <div className='flex gap-[30px] text-sm overflow-x-scroll overflow-y-hidden scrollbar-hide w-auto break-normal w-[85%]'>
 
-                    <Link to="/" onClick={()=>providedData.setPropertyType(0)} className='flex flex-col items-center justify-center'>
+                    <Link to="/" onClick={()=>providedData.setPropertyType(0)} className={`flex flex-col items-center justify-center ${providedData.propertyType===0 && "border-b-2 border-black"}`}>
                         <materialUiImports.RocketIcon />
                         <div>
                             OMG!
                         </div>
                     </Link>
-                    <Link to="/" onClick={()=>providedData.setPropertyType(1)} className='flex flex-col items-center justify-center'>
+                    <Link to="/" onClick={()=>providedData.setPropertyType(1)} className={`flex flex-col items-center justify-center ${providedData.propertyType===1 && "border-b-2 border-black"}`}>
                         <materialUiImports.CoffeeIcon/>
                         <div>
                             Bed & breakfasts
                         </div>
                     </Link>
-                    <Link to="/" onClick={()=>providedData.setPropertyType(2)} className='flex flex-col items-center justify-center'>
+                    <Link to="/" onClick={()=>providedData.setPropertyType(2)} className={`flex flex-col items-center justify-center ${providedData.propertyType===2 && "border-b-2 border-black"}`}>
                         <materialUiImports.CottageIcon/>
                         <div>
                             Earth homes
                         </div>
                     </Link>
-                    <Link to="/" onClick={()=>providedData.setPropertyType(3)} className='flex flex-col items-center justify-center'>
+                    <Link to="/" onClick={()=>providedData.setPropertyType(3)} className={`flex flex-col items-center justify-center ${providedData.propertyType===3 && "border-b-2 border-black"}`}>
                         <materialUiImports.SingleBedIcon/>
                         <div>
                             Private rooms
                         </div>
                     </Link>
-                    <Link to="/" onClick={()=>providedData.setPropertyType(4)} className='flex flex-col items-center justify-center'>
-                        <materialUiImports.SingleBedIcon/>
-                        <div>
-                            Private rooms
-                        </div>
-                    </Link>
-
-                    <Link to="/" onClick={()=>providedData.setPropertyType(5)} className='flex flex-col items-center justify-center'>
-                        <materialUiImports.SingleBedIcon/>
-                        <div>
-                            Private rooms
-                        </div>
-                    </Link>
-                    <Link to="/" onClick={()=>providedData.setPropertyType(6)} className='flex flex-col items-center justify-center'>
-                        <materialUiImports.SingleBedIcon/>
-                        <div>
-                            Private rooms
-                        </div>
-                    </Link>
-                    <Link to="/" onClick={()=>providedData.setPropertyType(7)} className='flex flex-col items-center justify-center'>
+                    <Link to="/" onClick={()=>providedData.setPropertyType(4)} className={`flex flex-col items-center justify-center ${providedData.propertyType===4 && "border-b-2 border-black"}`}>
                         <materialUiImports.SingleBedIcon/>
                         <div>
                             Private rooms
                         </div>
                     </Link>
 
-                    <Link to="/" onClick={()=>providedData.setPropertyType(8)} className='flex flex-col items-center justify-center'>
+                    <Link to="/" onClick={()=>providedData.setPropertyType(5)} className={`flex flex-col items-center justify-center ${providedData.propertyType===5 && "border-b-2 border-black"}`}>
                         <materialUiImports.SingleBedIcon/>
                         <div>
                             Private rooms
                         </div>
                     </Link>
-                    <Link to="/" onClick={()=>providedData.setPropertyType(9)} className='flex flex-col items-center justify-center'>
+                    <Link to="/" onClick={()=>providedData.setPropertyType(6)} className={`flex flex-col items-center justify-center ${providedData.propertyType===6 && "border-b-2 border-black"}`}>
                         <materialUiImports.SingleBedIcon/>
                         <div>
                             Private rooms
                         </div>
                     </Link>
-                    <Link to="/" onClick={()=>providedData.setPropertyType(10)} className='flex flex-col items-center justify-center'>
+                    <Link to="/" onClick={()=>providedData.setPropertyType(7)} className={`flex flex-col items-center justify-center ${providedData.propertyType===7 && "border-b-2 border-black"}`}>
                         <materialUiImports.SingleBedIcon/>
                         <div>
                             Private rooms
                         </div>
                     </Link>
-                    <Link to="/" onClick={()=>providedData.setPropertyType(11)} className='flex flex-col items-center justify-center'>
+
+                    <Link to="/" onClick={()=>providedData.setPropertyType(8)} className={`flex flex-col items-center justify-center ${providedData.propertyType===8 && "border-b-2 border-black"}`}>
+                        <materialUiImports.SingleBedIcon/>
+                        <div>
+                            Private rooms
+                        </div>
+                    </Link>
+                    <Link to="/" onClick={()=>providedData.setPropertyType(9)} className={`flex flex-col items-center justify-center ${providedData.propertyType===9 && "border-b-2 border-black"}`}>
+                        <materialUiImports.SingleBedIcon/>
+                        <div>
+                            Private rooms
+                        </div>
+                    </Link>
+                    <Link to="/" onClick={()=>providedData.setPropertyType(10)} className={`flex flex-col items-center justify-center ${providedData.propertyType===10 && "border-b-2 border-black"}`}>
+                        <materialUiImports.SingleBedIcon/>
+                        <div>
+                            Private rooms
+                        </div>
+                    </Link>
+                    <Link to="/" onClick={()=>providedData.setPropertyType(11)} className={`flex flex-col items-center justify-center ${providedData.propertyType===11 && "border-b-2 border-black"}`}>
                         <materialUiImports.SingleBedIcon/>
                         <div>
                             Private rooms

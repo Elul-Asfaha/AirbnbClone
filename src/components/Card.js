@@ -10,10 +10,10 @@ const Card=(props)=>{
     }
 
     return(
-        <div className='relative flex flex-col w-[100%] min-h-[350px]'>
-            <Link to={`/Details/${props.data.id}`} onClick={handleShowDetails} className="flex flex-col md:max-w-[300px] justify-between h-full ">
-                <img src={props.data.Image && props.data.Image} loading="lazy"  className='container rounded-lg mb-1 min-h-[65%] skeleton' alt=''/>
-                <div className='flex justify-between flex-wrap'>
+        <div className='relative flex flex-col w-[100%] min-h-[330px] hover:shadow hover:shadow-lg'>
+            <Link to={`/Details/${props.data.id}`} onClick={handleShowDetails} className="flex flex-col justify-between md:max-w-[300px] h-full">
+                   <img src={props.data.Image && props.data.Image} loading="lazy"  className='container rounded-t-lg mb-1 min-h-[65%] bg-gray-200' alt=''/>
+                <div className='flex justify-between flex-wrap px-1'>
                     <p className="font-bold skeleton">
                         {props.data.City && props.data.City},
                         <span>
@@ -23,25 +23,26 @@ const Card=(props)=>{
                         </span>
                         
                     </p>
-                    <p className='flex gap-1 skeleton'>
+                    <p className='flex gap-1 skeleton px-1'>
                         <materialUiImports.StarIcon/>
                         <span>
                             {props.data.Rating && props.data.Rating}
                         </span>
                     </p>
                 </div>
-                <p className='skeleton w-full'>
-                    Hosted by {props.data.Name && props.data.Name}
-                </p>
-                <p className='skeleton'>
-                    {props.data.Date && props.data.Date}
-                </p>
-                <p className='font-semibold skeleton'><span>${props.data.Price && props.data.Price}</span> Night</p>
-                
+                <div className='mt-2 px-1'>
+                    <p className='skeleton w-full'>
+                        Hosted by {props.data.Name && props.data.Name}
+                    </p>
+                    <p className='skeleton'>
+                        {props.data.Date && props.data.Date}
+                    </p>
+                    <p className='font-semibold skeleton'><span>${props.data.Price && props.data.Price}</span> Night</p>
+                </div>
             </Link>
             <div className='absolute right-3 top-3 max-h-[30px] max-w-[30px] cursor-pointer' onClick={
                 ()=>{
-                    providedData.handleAddFavorite();
+                    providedData.handleToggleFavorite();
                     providedData.setFavoriteId(props.data.id)
                 }
                 }>

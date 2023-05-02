@@ -1,9 +1,12 @@
 import materialUiImports from '../components/imports/materialUiImports';
-import { useEffect } from 'react';
+import { useContext, useEffect } from 'react';
 import data from '../mockdata/MOCK_DATA';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
+import { provideData } from '../App';
+import Nav from '../components/Nav';
 
 const Property=()=>{
+    const providedData=useContext(provideData)
     useEffect(()=>{
         window.scrollTo(0,0)
     },[])
@@ -11,9 +14,13 @@ const Property=()=>{
     const {id}=useParams()
     const details=data.filter(items=>items.id===Number(id))
     return(
-            <div id={id && id} className="min-h-screen flex flex-col gap-5 py-5 md:px-[5%] lg:px-[10%] xl:px-[15%] md:pb-[13%] lg:pb-[5%] relative">
-
-                <div className="flex flex-col justify-evenly gap-5 px-2">
+        <>
+            <div className="className hidden md:block">
+                <Nav/>
+            </div>
+            <div id={id && id} className="min-h-screen flex flex-col gap-5 md:pt-5 pb-5 md:px-[5%] lg:px-[10%] xl:px-[15%] md:pb-[13%] lg:pb-[5%] relative">
+                <Link to="/" className='absolute m-2 flex rounded-full border border-1 p-1'><materialUiImports.ArrowBackIcon/></Link>
+                <div className="hidden md:flex md:flex-col justify-evenly gap-5 px-2">
                     <h2 className="flex text-3xl">Blue Horizon Villa Anatoli, 1BD, private pool</h2>
                     <div className="flex flex-wrap justify-between">
                         <div className="flex flex-wrap gap-3">
@@ -22,42 +29,72 @@ const Property=()=>{
                                 {details[0].Rating && details[0].Rating}
                             </p>
                             <div className="flex font-bold underline">{details[0].Reviews && details[0].Reviews } reviews</div>
-                            {details[0].Superhost && 
-                            <div className='flex items-center justify-center'><materialUiImports.PriorityHighIcon/>Superhost  </div>
-                            }
+                                {details[0].Superhost && 
+                                    <div className='flex items-center justify-center'><materialUiImports.PriorityHighIcon/>Superhost  </div>
+                                }
                             <div className="flex font-bold underline">
                                 <p>{details[0].City && details[0].City},<span> {details[0].Country && details[0].Country}</span></p>
                             </div>
                         </div>
                         <div className="gap-3 hidden md:flex">
                             <p className="font-bold underline">share</p>
-                            <p className="font-bold underline">save</p>
+                            <p className="font-bold underline" onClick={()=>{
+                                providedData.handleAddFavorite();
+                                providedData.setFavoriteId(id)
+                                }}>save
+                            </p>
                         </div>
                     </div>
                 </div>
 
                 <div className="flex md:grid md:grid-cols-2 md:gap-x-4 justify-center md:rounded-xl max-h-[500px] overflow-hidden">
-                    <div className="flex"><img src={details[0].Image && details[0].Image} alt="" className="cover"/>
+                    <div className="flex">
+                        <img src={details[0].Image && details[0].Image} alt="" className="cover min-h-[250px] md:min-h-[500px] bg-gray-200"/>
                     </div>
                     <div className="hidden md:grid md:grid-cols-2 gap-2 max-h-[500px]">
                         <div className="flex">
-                            <img src={details[0].Image && details[0].Image}  alt="" className="cover"/>
+                            <img src={details[0].Image && details[0].Image}  alt="" className="cover bg-gray-200"/>
                         </div>
                         <div className="flex">
-                            <img src={details[0].Image && details[0].Image}  alt="" className="cover"/>
+                            <img src={details[0].Image && details[0].Image}  alt="" className="cover bg-gray-200"/>
                         </div>
                         <div className="flex">
-                            <img src={details[0].Image && details[0].Image}  alt="" className="cover"/>
+                            <img src={details[0].Image && details[0].Image}  alt="" className="cover bg-gray-200"/>
                         </div>
                         <div className="flex">
-                            <img src={details[0].Image && details[0].Image}  alt="" className="cover"/>
+                            <img src={details[0].Image && details[0].Image}  alt="" className="cover bg-gray-200"/>
                         </div>
                     </div>
                 </div>
-
+                
+                <div className="md:hidden flex flex-col justify-evenly gap-5 px-2">
+                    <h2 className="flex text-3xl">Blue Horizon Villa Anatoli, 1BD, private pool</h2>
+                    <div className="flex flex-wrap justify-between">
+                        <div className="flex flex-wrap gap-3">
+                            <p className='flex items-center'>
+                                <materialUiImports.StarIcon/>
+                                {details[0].Rating && details[0].Rating}
+                            </p>
+                            <div className="flex font-bold underline">{details[0].Reviews && details[0].Reviews } reviews</div>
+                                {details[0].Superhost && 
+                                    <div className='flex items-center justify-center'><materialUiImports.PriorityHighIcon/>Superhost  </div>
+                                }
+                            <div className="flex font-bold underline">
+                                <p>{details[0].City && details[0].City},<span> {details[0].Country && details[0].Country}</span></p>
+                            </div>
+                        </div>
+                        <div className="gap-3 hidden md:flex">
+                            <p className="font-bold underline">share</p>
+                            <p className="font-bold underline" onClick={()=>{
+                                providedData.handleAddFavorite();
+                                providedData.setFavoriteId(id)
+                                }}>save
+                            </p>
+                        </div>
+                    </div>
+                </div>
                 <div className="flex gap-5 justify-center md:justify-between" >
                     <div className="basis-10/12 md:basis-7/12 flex flex-col">
-                       
                         <div className="border-b border-1 pb-4">
                             <div  className="flex justify-between">
                                 <p className="font-bold max-w-[300px]">Earthen home hosted by {details[0].Name && details[0].Name}</p>
@@ -75,7 +112,7 @@ const Property=()=>{
                                 <p>{details[0].BathNo && details[0].BathNo } bath rooms</p>
                             </div>
                         </div>
-                        
+                            
                         <div className="flex flex-col gap-5 py-5 border-b border-1 pb-4">
                             <div className="flex gap-5">
                                 <div><materialUiImports.FeaturedPlayListIcon/></div>
@@ -91,12 +128,12 @@ const Property=()=>{
                                     <p className='text-gray-500'>90% of recent guests gave the check-in process a 5-star rating.</p>
                                 </div>
                             </div>
-                            <div className="flex gap-5">
-                                <div className=''><materialUiImports.EditCalendarIcon/></div>
-                                <div>
-                                    <p className='font-semibold'>Free cancellation before Apr 30.</p>
+                                <div className="flex gap-5">
+                                    <div className=''><materialUiImports.EditCalendarIcon/></div>
+                                    <div>
+                                        <p className='font-semibold'>Free cancellation before Apr 30.</p>
+                                    </div>
                                 </div>
-                            </div>
                         </div>
 
                         <div className="flex flex-col gap-5 py-5 border-b border-1 pb-4">
@@ -129,8 +166,8 @@ const Property=()=>{
                                     <div>Central air conditioning</div>
                                 </li>
                                 <li className='flex gap-5'> 
-                                    <div><materialUiImports.BathtubIcon/></div> 
-                                    <div>Bathtub</div>
+                                   <div><materialUiImports.BathtubIcon/></div> 
+                                 <div>Bathtub</div>
                                 </li>
                                 <li className='flex gap-5'> 
                                     <div><materialUiImports.NotificationsIcon/></div> 
@@ -143,8 +180,7 @@ const Property=()=>{
                             </ul>
                             <p className='rounded-xl text-bold p-5 border border-2 border-black w-[50%] cursor-pointer text-center w-full max-w-[300px]'>Show all 35 amenities</p>
                         </div>
-
-                        
+                            
                         <div className="flex flex-col gap-5 py-5 border-b border-1 pb-4">
                             <p className='text-3xl'>Accessibility features</p>
                             <p>This info was provided by the Host and reviewed by Airbnb.</p>
@@ -187,7 +223,7 @@ const Property=()=>{
                                         <div className='flex-1 p-2 border-r border-1'>Check-in</div>
                                         <div className='flex-1 p-2'>Checkout</div>
                                     </div>
-                                    <div className='border border-1 rounded-md'>Guests</div>
+                                        <div className='border border-1 rounded-md'>Guests</div>
                                 </div>
                                 <button className='bg-purple-700 text-white py-2 px-5 rounded-lg'>Reserve</button>
                                 <div>
@@ -214,12 +250,11 @@ const Property=()=>{
                                 <p className='text-gray-400 underline'>Report this listing</p>
                             </div>
                         </div>
-                        
+                            
                     </div>
-
                 </div>
-
-            </div>
+                </div>
+        </>
     )
 }
 export default Property

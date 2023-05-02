@@ -11,9 +11,7 @@ const Filter=()=>{
         providedData.setCurrentFilter({
             ...providedData.currentFilter,
             [name]: value
-        });
-        console.log(providedData.currentFilter)
-        
+        });        
     }
 
     const handleCurrentFilterCheckbox=(e)=>{
@@ -299,7 +297,7 @@ const Filter=()=>{
 
                 <div className="px-[5%] flex justify-between items-center py-3 px-4">
                     <button onClick={handleClearFilters} className="font-bold underline">Clear all</button>
-                    <button className="text-white bg-black dark:text-black dark:bg-white rounded-lg py-3 px-5">Show 666 stays</button>
+                    <button className="text-white bg-black dark:text-black dark:bg-white rounded-lg py-3 px-5" onClick={providedData.handleToggleFilter}>Show {providedData.filterPropertyAmount} stays</button>
                 </div>
             </div>
         </div>

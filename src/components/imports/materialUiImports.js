@@ -24,8 +24,8 @@ import FilterAltIcon from '@mui/icons-material/FilterAlt';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import CloseIcon from '@mui/icons-material/Close';
-
-
+import ArrowUpwardIcon from '@mui/icons-material/ArrowUpward';
+import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 const materialUiImports={
     AccountCircleIcon: AccountCircleIcon ,
     KeyIcon: KeyIcon,
@@ -53,6 +53,9 @@ const materialUiImports={
     KeyboardArrowUpIcon: KeyboardArrowUpIcon,
     FavoriteBorderIcon: FavoriteBorderIcon,
     CloseIcon: CloseIcon,
+    ArrowUpwardIcon:ArrowUpwardIcon,
+    ArrowBackIcon:ArrowBackIcon,
+    
 
 }
 export default materialUiImports
