@@ -13,8 +13,8 @@ const Addfavorite=()=>{
                     </div>
                     <p className="font-bold">Name this wishist</p>
                 </div>
-                <div className="flex flex-col min-h-[200px] px-5 dark:text-black dark:bg-white">
-                    <div className="mt-[30px] outline outline-1 outline-gray-200 p-2 flex flex-col border border-black rounded-lg">
+                <div className="flex flex-col min-h-[200px] px-5">
+                    <div className="mt-[30px] outline outline-1 outline-gray-200 p-2 flex flex-col border border-black rounded-lg  dark:text-black dark:bg-white">
                         <p className="text-gray-400">Name</p>
                         <input type="name" value={providedData.favoriteName}  onChange={(e)=>providedData.setFavoriteName(e.target.value)} className="text-md outline-none"/>
                     </div>
