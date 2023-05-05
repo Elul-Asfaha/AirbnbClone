@@ -19,7 +19,7 @@ const Property=()=>{
                 <Nav/>
             </div>
             <div id={id && id} className="min-h-screen flex flex-col gap-5 md:pt-5 pb-5 md:px-[5%] lg:px-[10%] xl:px-[15%] md:pb-[13%] lg:pb-[5%] relative">
-                <Link to="/" className='absolute m-2 flex rounded-full border border-1 p-1'><materialUiImports.ArrowBackIcon/></Link>
+                <Link to="/" className='absolute md:hidden m-2 flex rounded-full border border-1 p-1'><materialUiImports.ArrowBackIcon/></Link>
                 <div className="hidden md:flex md:flex-col justify-evenly gap-5 px-2">
                     <h2 className="flex text-3xl">Blue Horizon Villa Anatoli, 1BD, private pool</h2>
                     <div className="flex flex-wrap justify-between">
@@ -37,9 +37,9 @@ const Property=()=>{
                             </div>
                         </div>
                         <div className="gap-3 hidden md:flex">
-                            <p className="font-bold underline">share</p>
-                            <p className="font-bold underline" onClick={()=>{
-                                providedData.handleAddFavorite();
+                            <p className="font-bold underline cursor-pointer">share</p>
+                            <p className="font-bold underline  cursor-pointer" onClick={()=>{
+                                providedData.handleToggleFavorite();
                                 providedData.setFavoriteId(id)
                                 }}>save
                             </p>
@@ -47,21 +47,21 @@ const Property=()=>{
                     </div>
                 </div>
 
-                <div className="flex md:grid md:grid-cols-2 md:gap-x-4 justify-center md:rounded-xl max-h-[500px] overflow-hidden">
-                    <div className="flex">
-                        <img src={details[0].Image && details[0].Image} alt="" className="cover min-h-[250px] md:min-h-[500px] bg-gray-200"/>
+                <div className="flex md:grid md:grid-cols-2 md:gap-x-4 justify-center md:rounded-xl max-h-[500px] overflow-hidden bg-gray-200 md:bg-white dark:bg-black">
+                    <div className="flex bg-gray-200">
+                        <img src={details[0].Image && details[0].Image} alt="" className="cover min-h-[250px] md:min-h-[500px]"/>
                     </div>
                     <div className="hidden md:grid md:grid-cols-2 gap-2 max-h-[500px]">
-                        <div className="flex">
+                        <div className="flex  bg-gray-200">
                             <img src={details[0].Image && details[0].Image}  alt="" className="cover bg-gray-200"/>
                         </div>
-                        <div className="flex">
+                        <div className="flex  bg-gray-200">
                             <img src={details[0].Image && details[0].Image}  alt="" className="cover bg-gray-200"/>
                         </div>
-                        <div className="flex">
+                        <div className="flex  bg-gray-200">
                             <img src={details[0].Image && details[0].Image}  alt="" className="cover bg-gray-200"/>
                         </div>
-                        <div className="flex">
+                        <div className="flex  bg-gray-200">
                             <img src={details[0].Image && details[0].Image}  alt="" className="cover bg-gray-200"/>
                         </div>
                     </div>
@@ -194,6 +194,59 @@ const Property=()=>{
                             <p className='rounded-xl text-bold p-5 border border-2 border-black w-[60%] cursor-pointer text-center w-full max-w-[300px]'>Show all 35 feature details</p>
 
                         </div>
+                        
+                        <div className="md:hidden mt-5">
+                            <div className='rounded-lg shadow shadow-xl border border-1 min-h-[300px] flex flex-col gap-5 px-3 py-5'>
+                                <div className='flex flex-wrap justify-between'>
+                                    <p><span className='font-bold'>$ {details[0].Price && details[0].Price}</span> night</p>
+                                    <div className='flex gap-2 items-center'>
+                                        <div className='flex'>
+                                            <materialUiImports.StarIcon/>
+                                            <p>
+                                                {details[0].Rating && details[0].Rating }
+                                            </p>
+                                        </div>
+                                        <div className='border border-black border-1 h-[1px] w-[1px]'/>
+                                        <p className='underline'>
+                                        {details[0].Reviews && details[0].Reviews}
+                                        {' '}
+                                            reviews
+                                        </p>
+                                    </div>
+                                    
+                                </div>
+                                <div className='grid grid-rows-2 border border-1 rounded-md'>
+                                    <div className='flex border border-1 border-black rounded-md'>
+                                        <div className='flex-1 p-2 border-r border-1'>Check-in</div>
+                                        <div className='flex-1 p-2'>Checkout</div>
+                                    </div>
+                                        <div className='border border-1 rounded-md'>Guests</div>
+                                </div>
+                                <button className='bg-purple-700 text-white py-2 px-5 rounded-lg'>Reserve</button>
+                                <div>
+                                    <div className='flex justify-between'>
+                                        <p>$ {details[0].Price && details[0].Price} X 3 nights</p>
+                                        <p>$50</p>
+                                    </div>
+                                    <div className='flex justify-between'>
+                                        <p>Cleaning fee</p>
+                                        <p>$75</p>
+                                    </div>
+                                    <div className='flex justify-between'>
+                                        <p>Airbnb service fee</p>
+                                        <p>$90</p>
+                                    </div>
+                                </div>
+                                <div className='font-bold flex justify-between pt-5 border-t border-1'>
+                                    <p>Total</p>
+                                    <p>$ {details[0].Price && details[0].Price*3+(90+50+75)}</p>
+                                </div>
+                            </div>
+                            <div className='flex sticky top-0 mt-5 justify-center items-center gap-2'>
+                                <materialUiImports.FlagIcon/>
+                                <p className='text-gray-600 underline hover:text-red-500'>Report this listing</p>
+                            </div>
+                    </div>
 
                     </div>
 
@@ -247,7 +300,7 @@ const Property=()=>{
                             </div>
                             <div className='flex sticky top-0 mt-5 justify-center items-center gap-2'>
                                 <materialUiImports.FlagIcon/>
-                                <p className='text-gray-400 underline'>Report this listing</p>
+                                <p className='text-gray-600 underline hover:text-red-500'>Report this listing</p>
                             </div>
                         </div>
                             

@@ -13,12 +13,12 @@ const Addfavorite=()=>{
                     </div>
                     <p className="font-bold">Name this wishist</p>
                 </div>
-                <div className="flex flex-col min-h-[200px] px-5">
-                    <div className="mt-[30px] outline outline-1 outline-gray-200 p-2 flex flex-col border border-black rounded-lg  dark:text-black dark:bg-white">
+                <div className="flex flex-col min-h-[200px] px-5 dark:bg-white bg:text-black">
+                    <div className="mt-[30px] outline outline-1 outline-gray-200 p-2 flex flex-col border border-black rounded-lg">
                         <p className="text-gray-400">Name</p>
                         <input type="name" value={providedData.favoriteName}  onChange={(e)=>providedData.setFavoriteName(e.target.value)} className="text-md outline-none"/>
                     </div>
-                    <p className="text-gray-800/50 dark:text-white">50 characters maximum</p>
+                    <p className="text-gray-800/50">50 characters maximum</p>
                 </div>
                 <div className="border-t border-1 px-5">
                     <button className={`rounded-lg font-bold text-center w-full p-4 bg-gray-600 text-white my-5 text-lg

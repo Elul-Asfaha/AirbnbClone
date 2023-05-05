@@ -1,10 +1,11 @@
 
 import materialUiImports from './imports/materialUiImports';
 import { provideData } from "../App"
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 const Nav=()=>{
     const providedData=useContext(provideData)
+    const [dispUser,setDispUser]=useState(false)
     
     return(
         <div className="sticky top-0 z-40  bg-white dark:bg-black bg:text-white overflow-hidden border-b border-1  px-[5%]">
@@ -32,17 +33,36 @@ const Nav=()=>{
                 </div>
 
                 <div className="basis-4/12 hidden md:flex lg:basis-4/12 xl:basis-3/12 justify-between items-center gap-1 cursor-pointer">
-                    <div className='dark:hover:bg-gray-700 hover:bg-gray-100 p-3 rounded-full'>
+                    <div className='dark:hover:bg-gray-700 hover:bg-gray-100 p-3 rounded-full text-center'>
                         Airbnb your home
                     </div>
                     <div className='dark:hover:bg-gray-700 hover:bg-gray-100 p-3 rounded-full'>
                         <materialUiImports.LanguageIcon/>
                     </div>
-                    <div className='flex justify-evenly rounded-full border border-1 gap-3 px-1 py-2 hover:shadow hover:shadow cursor-pointer'>
+                    <div className='flex relative justify-evenly rounded-full border border-1 gap-3 px-1 py-2 hover:shadow hover:shadow cursor-pointer' onClick={()=>setDispUser(!dispUser)}>
                         <materialUiImports.MenuIcon/>
                         <materialUiImports.AccountCircleIcon/>
+                        {
+                            dispUser &&
+                            <div className="fixed flex flex-col md:top-20 right-[5%] w-[200px] py-1 bg-white dark:bg-black dark:text-white shadow rounded-xl gap-2">
+                                    <Link to='#' className="py-2 pl-2 hover:bg-gray-200">
+                                        Login
+                                    </Link>
+                                    <Link to='#' className="py-2 pl-2 hover:bg-gray-200">
+                                        Sign up
+                                    </Link>
+                                    <div className='border-t border-1 '/>
+                                    <Link to='#' className="py-2 pl-2 hover:bg-gray-200">
+                                        Air bnb your home
+                                    </Link>
+                                    <Link to='#' className="py-2 pl-2 hover:bg-gray-200">
+                                        Help
+                                    </Link>
+                            </div>
+                        }
                     </div>
                 </div>
+                
                 
             </div>
             <div className='hidden md:flex gap-5 justify-between items-center'>

@@ -5,7 +5,7 @@ import Footer from "./components/Footer"
 import Property from "./Pages/Property";
 import { Route, Routes } from "react-router-dom";
 import Addfavorite from "./components/Addfavorite";
-// import Help from "./Pages/Help";
+import Terms from "./Pages/Terms";
 import data from "./mockdata/MOCK_DATA";
 import Card from "./components/Card";
 
@@ -106,6 +106,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Main/>}/>
           <Route path="/Details/:id" element={<Property showProperty/>}/>
+          <Route path="/Terms" element={<Terms/>}/>
         </Routes>  
         }
 

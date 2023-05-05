@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import materialUiImports from './imports/materialUiImports';
 const Footer=()=>{
     return(
@@ -8,9 +9,9 @@ const Footer=()=>{
                         <li>
                         @ 2023 Airbnb,Inc.
                         </li>
-                        <li className='cursor-pointer hover:underline'>
+                        <Link to="/Terms" className='cursor-pointer hover:underline'>
                             Terms
-                        </li>
+                        </Link>
                         <li className='cursor-pointer hover:underline'>
                             Sitemap
                         </li>

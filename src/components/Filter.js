@@ -1,8 +1,12 @@
 import { provideData } from '../App';
 import materialUiImports from './imports/materialUiImports';
-import { useContext } from 'react';
+import { useContext,useEffect } from 'react';
 
 const Filter=()=>{
+    useEffect(()=>{
+        window.scrollTo(0,0)
+    },[])
+
     const providedData=useContext(provideData)
     const handleCurrentFilter=(e)=>{
         e.preventDefault();

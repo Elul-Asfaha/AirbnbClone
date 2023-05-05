@@ -12,8 +12,8 @@ const Card=(props)=>{
     return(
         <div className='relative flex flex-col w-[100%] min-h-[330px] hover:shadow hover:shadow-lg'>
             <Link to={`/Details/${props.data.id}`} onClick={handleShowDetails} className="flex flex-col justify-between md:max-w-[300px] h-full">
-                   <img src={props.data.Image && props.data.Image} loading="lazy"  className='container rounded-t-lg mb-1 min-h-[65%] bg-gray-200' alt=''/>
-                <div className='flex justify-between flex-wrap px-1'>
+                <img src={props.data.Image && props.data.Image}   className='container rounded-t-lg min-h-[65%] bg-gray-200' alt=''/>
+                <div className='flex justify-between flex-wrap px-1 mt-1'>
                     <p className="font-bold skeleton">
                         {props.data.City && props.data.City},
                         <span>
