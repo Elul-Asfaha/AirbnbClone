@@ -19,12 +19,10 @@ const Main=()=>{
 
 
     return(
-            <div className="relative">
-                <Nav/>
                 
-
-                <div className="min-h-screen py-5 md:px-[5%] md:pb-[13%] lg:pb-[5%] relative">
-                    <div className="flex flex-col sm:grid sm:grid-cols-2 md:grid-cols-3  lg:grid-cols-4 xl:grid-cols-6 gap-5">
+                <div className="relative min-h-screen px-[5%] md:px-[5%] md:pb-[5%] lg:pb-[5%]">
+                    <Nav/>
+                    <div className="flex flex-col mt-5 sm:grid sm:grid-cols-2 md:grid-cols-3  lg:grid-cols-4 xl:grid-cols-6 gap-5">
                         {
                         providedData.dispData.length!==0 && providedData.dispData.slice(0,amount)}
                         {
@@ -32,9 +30,13 @@ const Main=()=>{
                         }
                         
                     </div>
-                    <Showmore AmountDisplayed={()=>handleAmountDisplayed()}/> 
+                    
+                    {
+                        providedData.dispData.length>=amount &&
+                        <Showmore AmountDisplayed={()=>handleAmountDisplayed()}/>
+                        
+                    }
                 </div>
-            </div>
     )
 }
 export default Main

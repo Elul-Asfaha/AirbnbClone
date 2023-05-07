@@ -11,7 +11,6 @@ const Filter=()=>{
     const handleCurrentFilter=(e)=>{
         e.preventDefault();
         const {name,value}=e.target;
- 
         providedData.setCurrentFilter({
             ...providedData.currentFilter,
             [name]: value
@@ -21,7 +20,6 @@ const Filter=()=>{
     const handleCurrentFilterCheckbox=(e)=>{
         e.preventDefault();
         const {name,checked}=e.target;
-        
         providedData.setCurrentFilter({
             ...providedData.currentFilter,
             [name]: checked

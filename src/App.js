@@ -59,7 +59,6 @@ function App() {
     setFavoriteName("")
     handleToggleFavorite()
   }//this handles the add to favorite function
-  console.log(favorite)
 
   const dispData=propertyType!==0?
   data.filter(item=>

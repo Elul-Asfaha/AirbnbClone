@@ -26,6 +26,7 @@ import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import CloseIcon from '@mui/icons-material/Close';
 import ArrowUpwardIcon from '@mui/icons-material/ArrowUpward';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
+import IosShareIcon from '@mui/icons-material/IosShare';
 const materialUiImports={
     AccountCircleIcon: AccountCircleIcon ,
     KeyIcon: KeyIcon,
@@ -55,6 +56,7 @@ const materialUiImports={
     CloseIcon: CloseIcon,
     ArrowUpwardIcon:ArrowUpwardIcon,
     ArrowBackIcon:ArrowBackIcon,
+    IosShareIcon:IosShareIcon,
     
 
 }

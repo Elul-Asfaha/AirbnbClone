@@ -19,7 +19,7 @@ const Property=()=>{
                 <Nav/>
             </div>
             <div id={id && id} className="min-h-screen flex flex-col gap-5 md:pt-5 pb-5 md:px-[5%] lg:px-[10%] xl:px-[15%] md:pb-[13%] lg:pb-[5%] relative">
-                <Link to="/" className='absolute md:hidden m-2 flex rounded-full border border-1 p-1'><materialUiImports.ArrowBackIcon/></Link>
+                
                 <div className="hidden md:flex md:flex-col justify-evenly gap-5 px-2">
                     <h2 className="flex text-3xl">Blue Horizon Villa Anatoli, 1BD, private pool</h2>
                     <div className="flex flex-wrap justify-between">
@@ -47,10 +47,11 @@ const Property=()=>{
                     </div>
                 </div>
 
-                <div className="flex md:grid md:grid-cols-2 md:gap-x-4 justify-center md:rounded-xl max-h-[500px] overflow-hidden bg-gray-200 md:bg-white dark:bg-black">
+                <div className="relative flex md:grid md:grid-cols-2 md:gap-x-4 justify-center md:rounded-xl max-h-[500px] overflow-hidden bg-gray-200 md:bg-white dark:bg-black">
                     <div className="flex bg-gray-200">
                         <img src={details[0].Image && details[0].Image} alt="" className="cover min-h-[250px] md:min-h-[500px]"/>
                     </div>
+
                     <div className="hidden md:grid md:grid-cols-2 gap-2 max-h-[500px]">
                         <div className="flex  bg-gray-200">
                             <img src={details[0].Image && details[0].Image}  alt="" className="cover bg-gray-200"/>
@@ -65,6 +66,21 @@ const Property=()=>{
                             <img src={details[0].Image && details[0].Image}  alt="" className="cover bg-gray-200"/>
                         </div>
                     </div>
+
+                    <div className='absolute inset-x-0 md:hidden m-2 flex justify-between items-center'>
+                        <Link to="/" className='bg-white dark:bg-black dark:text-white rounded-full border border-1 shadow shadow-1 p-1'><materialUiImports.ArrowBackIcon/></Link>  
+                        <div className="gap-3 flex">
+                            <div className="bg-white dark:bg-black dark:text-white rounded-full border border-1 shadow shadow-1 p-1 cursor-pointer"><materialUiImports.IosShareIcon/></div>
+                            <div className="bg-white dark:bg-black dark:text-white rounded-full border border-1 shadow shadow-1 p-1  cursor-pointer" onClick={()=>{
+                                providedData.handleToggleFavorite();
+                                providedData.setFavoriteId(id)
+                                }}><materialUiImports.FavoriteBorderIcon/>
+                            </div>
+                        </div>           
+                    </div>
+                    <div className='absolute block md:hidden bottom-0 right-0 my-3 mx-2 rounded-md bg-black/50 text-white dadrk:bg-white/50 dark:text-black px-2'>
+                        1 / 19
+                    </div>
                 </div>
                 
                 <div className="md:hidden flex flex-col justify-evenly gap-5 px-2">
@@ -77,7 +93,7 @@ const Property=()=>{
                             </p>
                             <div className="flex font-bold underline">{details[0].Reviews && details[0].Reviews } reviews</div>
                                 {details[0].Superhost && 
-                                    <div className='flex items-center justify-center'><materialUiImports.PriorityHighIcon/>Superhost  </div>
+                                    <div className='flex items-center justify-center'><materialUiImports.PriorityHighIcon className='mr-[-7px]'/>Superhost</div>
                                 }
                             <div className="flex font-bold underline">
                                 <p>{details[0].City && details[0].City},<span> {details[0].Country && details[0].Country}</span></p>

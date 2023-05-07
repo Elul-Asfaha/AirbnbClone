@@ -8,7 +8,7 @@ const Nav=()=>{
     const [dispUser,setDispUser]=useState(false)
     
     return(
-        <div className="sticky top-0 z-40  bg-white dark:bg-black bg:text-white overflow-hidden border-b border-1  px-[5%]">
+        <div className="sticky top-0 z-40  bg-white dark:bg-black bg:text-white overflow-hidden border-b border-1">
             <div className='absolute inset-0 h-[30px]'>
                              Wishlist ({providedData.favorite.length})
             </div>
