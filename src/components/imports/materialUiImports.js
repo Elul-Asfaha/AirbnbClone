@@ -27,23 +27,23 @@ import CloseIcon from '@mui/icons-material/Close';
 import ArrowUpwardIcon from '@mui/icons-material/ArrowUpward';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import IosShareIcon from '@mui/icons-material/IosShare';
-const materialUiImports={
-    AccountCircleIcon: AccountCircleIcon ,
+const materialUiImports = {
+    AccountCircleIcon: AccountCircleIcon,
     KeyIcon: KeyIcon,
     EditCalendarIcon: EditCalendarIcon,
-    FeaturedPlayListIcon:FeaturedPlayListIcon,
-    AirCover:AirCover,
-    BathtubIcon:BathtubIcon,
-    HotTubIcon:HotTubIcon,
-    NotificationsIcon:NotificationsIcon,
-    AddAlertIcon:AddAlertIcon,
-    WifiIcon:WifiIcon,
-    AcUnitIcon:AcUnitIcon,
-    LocalParkingIcon:LocalParkingIcon,
-    StarIcon:StarIcon,
-    FlagIcon:FlagIcon,
-    PriorityHighIcon:PriorityHighIcon,
-    SearchIcon:SearchIcon,
+    FeaturedPlayListIcon: FeaturedPlayListIcon,
+    AirCover: AirCover,
+    BathtubIcon: BathtubIcon,
+    HotTubIcon: HotTubIcon,
+    NotificationsIcon: NotificationsIcon,
+    AddAlertIcon: AddAlertIcon,
+    WifiIcon: WifiIcon,
+    AcUnitIcon: AcUnitIcon,
+    LocalParkingIcon: LocalParkingIcon,
+    StarIcon: StarIcon,
+    FlagIcon: FlagIcon,
+    PriorityHighIcon: PriorityHighIcon,
+    SearchIcon: SearchIcon,
     LanguageIcon: LanguageIcon,
     MenuIcon: MenuIcon,
     RocketIcon: RocketIcon,
@@ -54,10 +54,10 @@ const materialUiImports={
     KeyboardArrowUpIcon: KeyboardArrowUpIcon,
     FavoriteBorderIcon: FavoriteBorderIcon,
     CloseIcon: CloseIcon,
-    ArrowUpwardIcon:ArrowUpwardIcon,
-    ArrowBackIcon:ArrowBackIcon,
-    IosShareIcon:IosShareIcon,
-    
+    ArrowUpwardIcon: ArrowUpwardIcon,
+    ArrowBackIcon: ArrowBackIcon,
+    IosShareIcon: IosShareIcon,
+
 
 }
 export default materialUiImports

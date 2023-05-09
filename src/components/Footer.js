@@ -1,13 +1,13 @@
 import { Link } from 'react-router-dom';
 import materialUiImports from './imports/materialUiImports';
-const Footer=()=>{
-    return(
+const Footer = () => {
+    return (
         <div className="md:sticky bottom-0 px-[5%] dark:bg-black dark:text-white bg-gray-100 w-full border-t border-1  offset-0">
             <div className='hidden md:flex justify-between py-5'>
                 <div className='basis-7/12 '>
                     <ul className=' flex flex-wrap gap-x-2'>
                         <li>
-                        @ 2023 Airbnb,Inc.
+                            @ 2023 Airbnb,Inc.
                         </li>
                         <Link to="/Terms" className='cursor-pointer hover:underline'>
                             Terms
@@ -15,7 +15,7 @@ const Footer=()=>{
                         <li className='cursor-pointer hover:underline'>
                             Sitemap
                         </li>
-                        <li className='cursor-pointer hover:underline'> 
+                        <li className='cursor-pointer hover:underline'>
                             privacy
                         </li>
                         <li className='cursor-pointer hover:underline'>
@@ -26,11 +26,11 @@ const Footer=()=>{
                         </li>
                     </ul>
                 </div>
-                
+
                 <div className='basis-5/12 flex items-center justify-end'>
                     <ul className='flex gap-2'>
                         <li className='flex items-center hover:underline cursor-pointer'>
-                            <materialUiImports.LanguageIcon/>
+                            <materialUiImports.LanguageIcon />
                             <p>
                                 English (US)
                             </p>
@@ -42,7 +42,7 @@ const Footer=()=>{
                             <p className='underline'>
                                 Support & resources
                             </p>
-                            <materialUiImports.KeyboardArrowUpIcon/>
+                            <materialUiImports.KeyboardArrowUpIcon />
                         </li>
                     </ul>
                 </div>
@@ -57,23 +57,23 @@ const Footer=()=>{
                         <li>
                             Help Center
                         </li>
-                        
+
                         <li>
                             AirCover
                         </li>
-                        
+
                         <li>
-                            Supporting people with disabilities 
+                            Supporting people with disabilities
                         </li>
-                        
+
                         <li>
                             Cancellation options
                         </li>
-                        
+
                         <li>
                             Our COVID-19 Response
                         </li>
-                        
+
                         <li>
                             Report a neighborhood concern
                         </li>
@@ -85,7 +85,7 @@ const Footer=()=>{
                         <li>
                             Airbnb.org: disaster relief housing
                         </li>
-                        
+
                         <li>
                             Combaitng discrimination
                         </li>
@@ -95,25 +95,25 @@ const Footer=()=>{
                     <p className='font-bold'>Hosting</p>
                     <ul className='flex flex-col gap-3'>
                         <li>
-                           Airbnb your home
+                            Airbnb your home
                         </li>
-                        
+
                         <li>
                             AirCover for Hosts
                         </li>
-                        
+
                         <li>
                             Explore hosting resources
                         </li>
-                        
+
                         <li>
-                            Visit our community forum 
+                            Visit our community forum
                         </li>
-                        
+
                         <li>
                             How to host responsibly
                         </li>
-                        
+
                         <li>
                             Airbnb-friendly apartments
                         </li>
@@ -125,23 +125,23 @@ const Footer=()=>{
                         <li>
                             Newsroom
                         </li>
-                        
+
                         <li>
                             Learn about new features
                         </li>
-                        
+
                         <li>
-                            Letter from our founders 
+                            Letter from our founders
                         </li>
-                        
+
                         <li>
                             Careers
                         </li>
-                        
+
                         <li>
                             Investors
                         </li>
-                        
+
                         <li>
                             Gift Cards
                         </li>
@@ -149,15 +149,15 @@ const Footer=()=>{
                 </div>
                 <div className='flex flex-col gap-2 mt-3'>
                     <ul className='flex gap-2 font-semibold'>
-                            <li className='flex items-center'>
-                                <materialUiImports.LanguageIcon/>
-                                <p>
-                                    English (US)
-                                </p>
-                            </li>
-                            <li>
-                                Eur
-                            </li>
+                        <li className='flex items-center'>
+                            <materialUiImports.LanguageIcon />
+                            <p>
+                                English (US)
+                            </p>
+                        </li>
+                        <li>
+                            Eur
+                        </li>
                     </ul>
                     <div className='flex flex-col'>
                         <p>@2023 Airbnb, Inc.</p>
@@ -165,10 +165,10 @@ const Footer=()=>{
                             <li>Terms</li>
                             <li>Sitemap</li>
                             <li>Privacy</li>
-                            <li>Your Privacy Choices</li> 
+                            <li>Your Privacy Choices</li>
                         </ul>
                     </div>
-                    
+
                 </div>
             </div>
         </div>
