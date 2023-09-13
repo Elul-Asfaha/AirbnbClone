@@ -194,7 +194,7 @@ const Property = () => {
                                     <div>Smoke alarm</div>
                                 </li>
                             </ul>
-                            <p className='rounded-xl text-bold p-5 border-2 border-black cursor-pointer text-center w-full max-w-[300px]'>Show all 35 amenities</p>
+                            <p className='rounded-xl text-bold p-5 border-2 border-black cursor-pointer text-center w-full max-w-[300px] hover:translate-x-1'>Show all 35 amenities</p>
                         </div>
 
                         <div className="flex flex-col gap-5 py-5 border-b border-1 pb-4">
@@ -207,7 +207,7 @@ const Property = () => {
                                 </p>
                                 <p>Lit path to the guest entrance</p>
                             </div>
-                            <p className='rounded-xl text-bold p-5 border-2 border-black  cursor-pointer text-center w-full max-w-[300px]'>Show all 35 feature details</p>
+                            <p className='rounded-xl text-bold p-5 border-2 border-black  cursor-pointer text-center w-full max-w-[300px] hover:translate-x-1'>Show all 35 feature details</p>
 
                         </div>
 
@@ -258,9 +258,9 @@ const Property = () => {
                                     <p>$ {details[0].Price && details[0].Price * 3 + (90 + 50 + 75)}</p>
                                 </div>
                             </div>
-                            <div className='flex sticky top-0 mt-5 justify-center items-center gap-2'>
+                            <div className='cursor-pointer flex sticky top-0 mt-5 justify-center items-center gap-2'>
                                 <materialUiImports.FlagIcon />
-                                <p className='text-gray-600 underline hover:text-red-500'>Report this listing</p>
+                                <p className=' text-gray-600 underline hover:text-red-500'>Report this listing</p>
                             </div>
                         </div>
 
@@ -314,9 +314,9 @@ const Property = () => {
                                     <p>$ {details[0].Price && details[0].Price * 3 + (90 + 50 + 75)}</p>
                                 </div>
                             </div>
-                            <div className='flex sticky top-0 mt-5 justify-center items-center gap-2'>
+                            <div className='cursor-pointer flex sticky top-0 mt-5 justify-center items-center gap-2'>
                                 <materialUiImports.FlagIcon />
-                                <p className='text-gray-600 underline hover:text-red-500'>Report this listing</p>
+                                <p className=' text-gray-600 underline hover:text-red-500'>Report this listing</p>
                             </div>
                         </div>
 
