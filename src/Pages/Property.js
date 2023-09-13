@@ -49,21 +49,21 @@ const Property = () => {
 
                 <div className="relative flex md:grid md:grid-cols-2 md:gap-x-4 justify-center md:rounded-xl max-h-[500px] overflow-hidden bg-gray-200 md:bg-white dark:bg-black">
                     <div className="flex bg-gray-200">
-                        <img src={details[0].Image && details[0].Image} alt="" className="cover min-h-[250px] md:min-h-[500px]" />
+                        <img src={details[0].Image && `https://source.unsplash.com/1700x${Math.random() * (1080 - 700) + 700}?house`} alt="" className="cover min-h-[250px] md:min-h-[500px]" />
                     </div>
 
                     <div className="hidden md:grid md:grid-cols-2 gap-2 max-h-[500px]">
                         <div className="flex  bg-gray-200">
-                            <img src={details[0].Image && details[0].Image} alt="" className="cover bg-gray-200" />
+                            <img src={details[0].Image && `https://source.unsplash.com/1700x${Math.random() * (1080 - 700) + 700}?house`} alt="" className="cover bg-gray-200" />
                         </div>
                         <div className="flex  bg-gray-200">
-                            <img src={details[0].Image && details[0].Image} alt="" className="cover bg-gray-200" />
+                            <img src={details[0].Image && `https://source.unsplash.com/1700x${Math.random() * (1080 - 700) + 700}?house`} alt="" className="cover bg-gray-200" />
                         </div>
                         <div className="flex  bg-gray-200">
-                            <img src={details[0].Image && details[0].Image} alt="" className="cover bg-gray-200" />
+                            <img src={details[0].Image && `https://source.unsplash.com/1700x${Math.random() * (1080 - 700) + 700}?house`} alt="" className="cover bg-gray-200" />
                         </div>
                         <div className="flex  bg-gray-200">
-                            <img src={details[0].Image && details[0].Image} alt="" className="cover bg-gray-200" />
+                            <img src={details[0].Image && `https://source.unsplash.com/1700x${Math.random() * (1080 - 700) + 700}?house`} alt="" className="cover bg-gray-200" />
                         </div>
                     </div>
 

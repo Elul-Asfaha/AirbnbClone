@@ -13,7 +13,7 @@ const Card = (props) => {
         <div className='relative flex flex-col w-[100%] min-h-[300px] md:min-h-[330px] hover:shadow-lg'>
             <Link to={`/Details/${props.data.id}`} onClick={handleShowDetails} className="flex flex-col justify-between md:max-w-[300px] h-full">
                 <div className='flex min-h-[195px] md:min-h-[214.5px] bg-gray-200 rounded-t-lg'>
-                    <img src={props.data.Image && props.data.Image} className='container rounded-t-lg' alt='' />
+                    <img src={props.data.Image && `https://source.unsplash.com/1700x${Math.random() * (1080 - 700) + 700}?house`} className='container rounded-lg' alt='' />
 
                 </div>
                 <div className='flex justify-between flex-wrap px-1 mt-1'>
@@ -34,7 +34,7 @@ const Card = (props) => {
                     </p>
                 </div>
                 <div className='mt-2 px-1'>
-                    <p className='skeleton w-full'>
+                    <p className='skeleton w-full text-gray-500'>
                         Hosted by {props.data.Name && props.data.Name}
                     </p>
                     <p className='skeleton'>

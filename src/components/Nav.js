@@ -3,6 +3,7 @@ import materialUiImports from './imports/materialUiImports';
 import { provideData } from "../App"
 import { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
+import airbnb from '../images/airbnb.png'
 const Nav = () => {
     const providedData = useContext(provideData)
     const [dispUser, setDispUser] = useState(false)
@@ -14,10 +15,10 @@ const Nav = () => {
             </div>
             <div className='flex items-center lg:justify-between md:py-4'>
                 <Link to='/' className="basis-3/12 hidden md:block">
-                    logo
+                    <img src={airbnb} alt="" srcset="" className=' h-[40px]' />
                 </Link>
 
-                <div className="hidden md:basis-5/12 lg:basis-3/12 md:flex justify-between items-center gap-5 border border-1 rouneded hover:shadow rounded-full py-1 pl-5 px-1 font-semibold cursor-pointer">
+                <div className="hidden md:basis-5/12 lg:basis-3/12 md:flex justify-between items-center gap-5 border border-1 rouneded hover:shadow rounded-full py-1 pl-5 px-1 cursor-pointer" style={{ fontWeight: "500" }}>
                     <div>
                         Anywhere
                     </div>
